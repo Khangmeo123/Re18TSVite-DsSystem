@@ -1,4 +1,4 @@
-import { Model } from "react3l-common";
+import { Model } from "react-3layer-commonnnn";
 
 export class FileTemplate extends Model {
   public id?: number;

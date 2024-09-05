@@ -1,5 +1,5 @@
-import { Model } from "react3l-common";
-import { Field, ObjectField } from "react3l-decorators";
+import { Model } from "react-3layer-commonnnn";
+import { Field, ObjectField } from "react-3layer-decorators";
 
 export class SubSystemType extends Model {
   @Field(Number)

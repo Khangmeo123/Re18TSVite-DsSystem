@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import { Model } from "react3l-common";
-import { Field } from "react3l-decorators";
+import { Model } from "react-3layer-commonnnn";
+import { Field } from "react-3layer-decorators";
 
 export class AdminType extends Model {
   @Field(Number)

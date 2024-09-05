@@ -39,9 +39,9 @@ export default defineConfig((context) => {
         // resolve style paths:
         "~bootstrap": resolve(__dirname, "node_modules/bootstrap"),
         "~antd": resolve(__dirname, "node_modules/antd"),
-        "~react3l-ui-library": resolve(
+        "~react-3layer-ui-components": resolve(
           __dirname,
-          "node_modules/react3l-ui-library"
+          "node_modules/react-3layer-ui-components"
         ),
         // resolve folder paths:
         app: resolve(__dirname, "./src/app/"),

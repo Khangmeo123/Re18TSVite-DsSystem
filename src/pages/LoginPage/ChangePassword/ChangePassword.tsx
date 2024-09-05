@@ -1,5 +1,5 @@
 import { Divider } from "antd";
-import { Button, FormItem } from "react3l-ui-library";
+import { Button, FormItem } from "react-3layer-ui-components";
 import { ArrowLeft, Loop, Unlocked, View, ViewOff } from "@carbon/icons-react";
 import InputTextLogin from "../InputTextLogin/InputTextLogin";
 import type { TFunction } from "i18next";

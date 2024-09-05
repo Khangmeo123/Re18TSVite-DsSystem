@@ -1,6 +1,6 @@
 import type { Moment } from "moment";
-import { Model } from "react3l-common";
-import { Field, MomentField } from "react3l-decorators";
+import { Model } from "react-3layer-commonnnn";
+import { Field, MomentField } from "react-3layer-decorators";
 
 export class LoginUser extends Model {
   @Field(String)

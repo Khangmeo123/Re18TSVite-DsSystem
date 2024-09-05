@@ -1,7 +1,7 @@
 import React from "react";
 import { Loop, ArrowRight, Email, ArrowLeft } from "@carbon/icons-react";
 import { Divider } from "antd";
-import { FormItem, Button } from "react3l-ui-library";
+import { FormItem, Button } from "react-3layer-ui-components";
 import InputTextLogin from "../InputTextLogin/InputTextLogin";
 import type { TFunction } from "i18next";
 import { AxiosError } from "axios";

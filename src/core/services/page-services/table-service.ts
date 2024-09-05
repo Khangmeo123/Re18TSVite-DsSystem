@@ -1,4 +1,4 @@
-import { Model, ModelFilter } from "react3l-common";
+import { Model, ModelFilter } from "react-3layer-commonnnn";
 import { SortOrder, SorterResult } from "antd/lib/table/interface";
 import React, { useCallback } from "react";
 import * as yup from "yup";

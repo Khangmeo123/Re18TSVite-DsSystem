@@ -7,7 +7,7 @@ import { utilService } from "core/services/common-services/util-service";
 import { Profile, ProfileChangePassword } from "core/models/Profile";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Drawer, FormItem, InputText } from "react3l-ui-library";
+import { Drawer, FormItem, InputText } from "react-3layer-ui-components";
 import { profileRepository } from "core/repositories/ProfileRepository";
 import { finalize } from "rxjs";
 

@@ -1,9 +1,9 @@
-import { IdFilter } from "react3l-advanced-filters";
+import { IdFilter } from "react-3layer-advance-filters";
 import _isObject from "lodash/isObject";
 import _isEqual from "lodash/isEqual";
 import { queryStringService } from "core/services/page-services/query-string-service";
 import React, { Reducer } from "react";
-import { Model, ModelFilter, OrderType } from "react3l-common";
+import { Model, ModelFilter, OrderType } from "react-3layer-commonnnn";
 import { finalize, Observable } from "rxjs";
 import { utilService } from "core/services/common-services/util-service";
 import _cloneDeep from "lodash/cloneDeep";
@@ -87,20 +87,20 @@ export const requestHistoryService = {
     contentTo: Model
   ): CompareState {
     if (contentFrom && contentTo) {
-      const value = _isObject(contentFrom[fieldValue])
-        ? contentFrom[fieldValue]["id"]
-        : contentFrom[fieldValue];
-      const oldValue = _isObject(contentTo[fieldValue])
-        ? contentTo[fieldValue]["id"]
-        : contentTo[fieldValue];
-      if (value && oldValue) {
-        if (!_isEqual(value, oldValue)) {
-          return CompareState.RED;
-        }
-      }
-      if (!value && oldValue) {
-        return CompareState.GREEN;
-      }
+      // const value = _isObject(contentFrom[fieldValue])
+      //   ? contentFrom[fieldValue]["id"]
+      //   : contentFrom[fieldValue];
+      // const oldValue = _isObject(contentTo[fieldValue])
+      //   ? contentTo[fieldValue]["id"]
+      //   : contentTo[fieldValue];
+      // if (value && oldValue) {
+      //   if (!_isEqual(value, oldValue)) {
+      //     return CompareState.RED;
+      //   }
+      // }
+      // if (!value && oldValue) {
+      //   return CompareState.GREEN;
+      // }
     }
     return CompareState.WHITE;
   },

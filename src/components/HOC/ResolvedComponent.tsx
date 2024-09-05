@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import React from "react";
-import { Model } from "react3l-common";
+import { Model } from "react-3layer-commonnnn";
 import { Observable } from "rxjs";
 type Component = typeof React.Component | ((props?: unknown) => JSX.Element);
 

@@ -1,5 +1,4 @@
 import type { Moment } from "moment";
-import { Model, ModelFilter } from "react3l-common";
 import React, {
   Dispatch,
   Reducer,
@@ -15,11 +14,12 @@ import {
   NumberFilter,
   DateFilter,
   IdFilter,
-} from "react3l-advanced-filters";
+} from "react-3layer-advance-filters";
 import { Observable } from "rxjs";
 import memoize from "fast-memoize";
 import { utilService } from "core/services/common-services/util-service";
 import { FilterAction, FilterActionEnum } from "../service-types";
+import { Model, ModelFilter } from "react-3layer-commonnnn";
 
 export function filterReducer<TFilter extends ModelFilter>(
   state: TFilter,

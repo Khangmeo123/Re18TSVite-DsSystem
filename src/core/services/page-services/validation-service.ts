@@ -1,5 +1,5 @@
 import React from "react";
-import { Model } from "react3l-common";
+import { Model } from "react-3layer-commonnnn";
 import { utilService } from "core/services/common-services/util-service";
 import * as yup from "yup";
 import * as i18n from "i18next";

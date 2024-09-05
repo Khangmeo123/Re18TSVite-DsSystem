@@ -2,7 +2,7 @@ import PageHeader from "components/PageHeader/PageHeader";
 import React, { ReactElement } from "react";
 import "./FileTemplate.scss";
 import useFileTemplateHook from "./FileTemplateHook";
-import { Button, InputText, TextArea } from "react3l-ui-library";
+import { Button, InputText, TextArea } from "react-3layer-ui-components";
 import { Col, Dropdown, Menu, Row, Spin } from "antd";
 import { Observable } from "rxjs";
 import { FileTemplate, FileTemplateInput } from "core/models/FileTemplate";

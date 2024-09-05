@@ -1,7 +1,7 @@
 import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import { FORBIDENT_ROUTE } from "core/config/consts";
 import moment from "moment";
-import { Repository } from "react3l-common";
+import { Repository } from "react-3layer-commonnnn";
 import appMessageService, {
   messageType,
 } from "core/services/common-services/app-message-service";

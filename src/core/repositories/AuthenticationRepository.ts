@@ -2,7 +2,7 @@ import { BASE_API_URL } from "core/config/consts";
 import { httpConfig } from "core/config/http";
 import { LoginUser } from "core/models/LoginUser";
 import kebabCase from "lodash/kebabCase";
-import { Repository } from "react3l-common";
+import { Repository } from "react-3layer-commonnnn";
 import { Observable } from "rxjs";
 import nameof from "ts-nameof.macro";
 

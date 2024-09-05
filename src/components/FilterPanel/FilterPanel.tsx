@@ -1,6 +1,6 @@
 import { Row } from "antd";
 import React, { ReactNode } from "react";
-import { Button } from "react3l-ui-library";
+import { Button } from "react-3layer-ui-components";
 import "./FilterPanel.scss";
 import Left from "./Left";
 import Right from "./Right";

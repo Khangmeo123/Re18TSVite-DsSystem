@@ -6,7 +6,7 @@ import ForgotPassword from "./ForgotPassword/ForgotPassword";
 import GetOtp from "./GetOtp/GetOtp";
 import LoginHeader from "./LoginHeader/LoginHeader";
 import { Loop, UserAvatar, Login as LoginIcon } from "@carbon/icons-react";
-import { FormItem, Button } from "react3l-ui-library";
+import { FormItem, Button } from "react-3layer-ui-components";
 import InputTextLogin from "./InputTextLogin/InputTextLogin";
 import SuccessResultView from "./SuccessResultView/SuccessResultView";
 import { useTranslation } from "react-i18next";
