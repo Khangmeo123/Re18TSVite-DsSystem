@@ -93,14 +93,30 @@ export const requestHistoryService = {
       // const oldValue = _isObject(contentTo[fieldValue])
       //   ? contentTo[fieldValue]["id"]
       //   : contentTo[fieldValue];
-      // if (value && oldValue) {
-      //   if (!_isEqual(value, oldValue)) {
-      //     return CompareState.RED;
-      //   }
-      // }
-      // if (!value && oldValue) {
-      //   return CompareState.GREEN;
-      // }
+
+      // thay cho đoạn trên bị lỗi validate
+      let value = undefined;
+      let oldValue = undefined;
+      if (_isObject(contentFrom[fieldValue])) {
+        const objectValue: Model = contentFrom[fieldValue];
+        value = objectValue?.id;
+      } else {
+        value = contentFrom[fieldValue];
+      }
+      if (_isObject(contentTo[fieldValue])) {
+        const objectValue: Model = contentTo[fieldValue];
+        oldValue = objectValue?.id;
+      } else {
+        oldValue = contentTo[fieldValue];
+      }
+      if (value && oldValue) {
+        if (!_isEqual(value, oldValue)) {
+          return CompareState.RED;
+        }
+      }
+      if (!value && oldValue) {
+        return CompareState.GREEN;
+      }
     }
     return CompareState.WHITE;
   },
