@@ -3,7 +3,7 @@ import { Menu } from "config/config-type";
 import type { Moment } from "moment";
 import moment from "moment";
 import React, { RefObject } from "react";
-import { Model } from "react-3layer-commonnnn";
+import { Model } from "react-3layer-common";
 import { AnyObj, TreeNode, ValidateStatus } from "../service-types";
 
 export const utilService = {

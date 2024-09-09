@@ -1,4 +1,4 @@
-import { Model } from "react-3layer-commonnnn";
+import { Model } from "react-3layer-common";
 import { Field, ObjectField } from "react-3layer-decorators";
 
 export class SubSystemType extends Model {

@@ -1,4 +1,4 @@
-import { Model } from "react-3layer-commonnnn";
+import { Model } from "react-3layer-common";
 import { produce } from "immer";
 import React from "react";
 import { utilService } from "./util-service";

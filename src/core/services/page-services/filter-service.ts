@@ -19,7 +19,7 @@ import { Observable } from "rxjs";
 import memoize from "fast-memoize";
 import { utilService } from "core/services/common-services/util-service";
 import { FilterAction, FilterActionEnum } from "../service-types";
-import { Model, ModelFilter } from "react-3layer-commonnnn";
+import { Model, ModelFilter } from "react-3layer-common";
 
 export function filterReducer<TFilter extends ModelFilter>(
   state: TFilter,

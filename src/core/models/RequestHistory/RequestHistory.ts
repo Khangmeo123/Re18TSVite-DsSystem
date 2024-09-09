@@ -1,5 +1,5 @@
 import type { Moment } from "moment";
-import { Model } from "react-3layer-commonnnn";
+import { Model } from "react-3layer-common";
 import { Field, MomentField, ObjectList } from "react-3layer-decorators";
 
 export class RequestHistoryDisplayFieldContent {

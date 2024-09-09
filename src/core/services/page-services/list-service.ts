@@ -17,7 +17,7 @@ import _cloneDeep from "lodash/cloneDeep";
 import _orderBy from "lodash/orderBy";
 import _take from "lodash/take";
 import _drop from "lodash/drop";
-import { Model, ModelFilter, OrderType } from "react-3layer-commonnnn";
+import { Model, ModelFilter, OrderType } from "react-3layer-common";
 import { finalize, forkJoin, Observable } from "rxjs";
 import { webService } from "../common-services/web-service";
 import type { Moment } from "moment";

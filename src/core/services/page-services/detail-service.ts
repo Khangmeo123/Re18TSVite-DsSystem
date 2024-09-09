@@ -7,7 +7,7 @@ import React, {
   useRef,
   useState,
 } from "react";
-import { Model, ModelFilter } from "react-3layer-commonnnn";
+import { Model, ModelFilter } from "react-3layer-common";
 import { finalize, forkJoin, Observable } from "rxjs";
 import { webService } from "../common-services/web-service";
 import { queryStringService } from "./query-string-service";

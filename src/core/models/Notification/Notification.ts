@@ -1,5 +1,5 @@
 import type { Moment } from "moment";
-import { Model } from "react-3layer-commonnnn";
+import { Model } from "react-3layer-common";
 
 export class Notification extends Model {
   public unread?: boolean;

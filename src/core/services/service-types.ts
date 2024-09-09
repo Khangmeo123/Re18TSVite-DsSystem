@@ -1,5 +1,5 @@
 import { Menu } from "config/config-type";
-import { Model } from "react-3layer-commonnnn";
+import { Model } from "react-3layer-common";
 import * as yup from "yup";
 import { ColumnGroupType, ColumnType } from "antd/lib/table/interface";
 import type { DataNode } from "antd/lib/tree";

@@ -2,7 +2,7 @@ import { Field, ObjectField, ObjectList } from "react-3layer-decorators";
 
 import { AdminType } from "../AdminType";
 import { SubSystem } from "../SubSystem";
-import { Model } from "react-3layer-commonnnn";
+import { Model } from "react-3layer-common";
 
 export class Profile extends Model {
   @Field(Number)

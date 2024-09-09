@@ -3,7 +3,7 @@ import _isObject from "lodash/isObject";
 import _isEqual from "lodash/isEqual";
 import { queryStringService } from "core/services/page-services/query-string-service";
 import React, { Reducer } from "react";
-import { Model, ModelFilter, OrderType } from "react-3layer-commonnnn";
+import { Model, ModelFilter, OrderType } from "react-3layer-common";
 import { finalize, Observable } from "rxjs";
 import { utilService } from "core/services/common-services/util-service";
 import _cloneDeep from "lodash/cloneDeep";

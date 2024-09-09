@@ -3,7 +3,7 @@ import {
   IdFilter,
   StringFilter,
 } from "react-3layer-advance-filters";
-import { ModelFilter } from "react-3layer-commonnnn";
+import { ModelFilter } from "react-3layer-common";
 
 export class RequestHistoryFilter extends ModelFilter {
   public requestId?: IdFilter = new IdFilter();

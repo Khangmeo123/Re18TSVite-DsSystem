@@ -3218,7 +3218,7 @@ dayjs@1.x, dayjs@^1.9.1:
   resolved "https://nexus.truesight.asia/repository/npm-registry/dayjs/-/dayjs-1.11.7.tgz#4b296922642f70999544d1144a2c25730fce63e2"
   integrity sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==
 
-dayjs@^1.11.11, dayjs@^1.11.12:
+dayjs@^1.11.11, dayjs@^1.11.12, dayjs@^1.11.13:
   version "1.11.13"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.11.13.tgz#92430b0139055c3ebb60150aa13e860a4b5a366c"
   integrity sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg==
@@ -6807,14 +6807,15 @@ rc-virtual-list@^3.2.0, rc-virtual-list@^3.4.8:
     rc-resize-observer "^1.0.0"
     rc-util "^5.15.0"
 
-react-3layer-advance-filters@^1.0.4:
-  version "1.0.4"
-  resolved "https://nexus.truesight.asia/repository/npm-registry/react-3layer-advance-filters/-/react-3layer-advance-filters-1.0.4.tgz#18bf95b84019a7743bfdeab94fa2a99e88e54158"
-  integrity sha512-RjlfpMwy4N7zIOfU4JGa0heFR1jM8j1vVIdspXf6xWdCeCTVEpTuhhDKKV17QHF3CHqeHfuXc+AV1PajGikpVw==
+react-3layer-advance-filters@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-3layer-advance-filters/-/react-3layer-advance-filters-1.0.5.tgz#733d1cc4f69ceeb0ea30dab083f6a65d02c38723"
+  integrity sha512-1lYCDMmotfO0l4PFTu0VLduPB+R8/zMWGkQgiSKEpxGc3MSWgesI4VNWq9j+vEtnH/hN0E5n3yTqAVSoxRJx9w==
   dependencies:
     "@types/jest" "^29.5.12"
+    dayjs "^1.11.13"
     jest "^29.7.0"
-    react-3layer-decorators "^1.0.2"
+    react-3layer-decorators "^1.0.3"
     rollup "^4.21.0"
     rollup-plugin-typescript2 "^0.36.0"
     ts-jest "^29.2.5"
@@ -6822,7 +6823,7 @@ react-3layer-advance-filters@^1.0.4:
 
 react-3layer-axios-observable@^1.0.2:
   version "1.0.2"
-  resolved "https://nexus.truesight.asia/repository/npm-registry/react-3layer-axios-observable/-/react-3layer-axios-observable-1.0.2.tgz#dd326898d9d0736fb3e548925e0cf613e2717736"
+  resolved "https://registry.yarnpkg.com/react-3layer-axios-observable/-/react-3layer-axios-observable-1.0.2.tgz#dd326898d9d0736fb3e548925e0cf613e2717736"
   integrity sha512-tmyr1tJym2JO9STPS7eMnwYFpN68OkPSYUgKNLhN2imzN/6ZFln5684hi9JKKWMHywa6yi6s6XEILeRk0FNZ+g==
   dependencies:
     axios "~0.21"
@@ -6831,52 +6832,39 @@ react-3layer-axios-observable@^1.0.2:
     rxjs "^7.8.1"
     typescript "^5.5.4"
 
-react-3layer-common@^1.0.12:
-  version "1.0.12"
-  resolved "https://registry.yarnpkg.com/react-3layer-common/-/react-3layer-common-1.0.12.tgz#229e670880fb26712f1544dae2713349b3ec567c"
-  integrity sha512-qVIePaNTRdtE2cX/8VGeFIwPDPRhq2vrPSdmaAk5YlUXrbFaw5UUjiBDijdSCDurkLkRTsfiw+yhHsfpWJjyDQ==
+react-3layer-common@^1.0.13:
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/react-3layer-common/-/react-3layer-common-1.0.13.tgz#a37b55e0c6429270e7b735208e26ee6157ae0ba7"
+  integrity sha512-q/VoBlB89bPa1olxEvQxl72+7t+EvIZUnF1W8VBtxxnHR73mQ+K6/pXEagLoqImZ/hqeR6CEHrp7ebHCiEXjLA==
   dependencies:
     axios "0.21.4"
     react "^18.3.1"
     react-3layer-axios-observable "^1.0.2"
-    react-3layer-decorators "^1.0.2"
+    react-3layer-decorators "^1.0.3"
     rollup "^4.21.2"
     rollup-plugin-typescript2 "^0.36.0"
     rxjs "^7.8.1"
     typescript "^5.5.4"
 
-react-3layer-commonnnn@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/react-3layer-commonnnn/-/react-3layer-commonnnn-1.0.2.tgz#8014add390d5f8c72113d40c5008a18264328604"
-  integrity sha512-DSUId8E9NElm87Ky+KEbg6mcvydx/OtwoaqAH+G9MAicczBd2nm41YIZYnrPaJguBbGfvHlsOwUdfLpDkl/RTQ==
-  dependencies:
-    axios "0.21.4"
-    react "^18.3.1"
-    react-3layer-axios-observable "^1.0.2"
-    react-3layer-decorators "^1.0.2"
-    rollup "^4.21.2"
-    rollup-plugin-typescript2 "^0.36.0"
-    rxjs "^7.8.1"
-    typescript "^5.5.4"
-
-react-3layer-decorators@^1.0.1, react-3layer-decorators@^1.0.2:
-  version "1.0.2"
-  resolved "https://nexus.truesight.asia/repository/npm-registry/react-3layer-decorators/-/react-3layer-decorators-1.0.2.tgz#a7ffca3e845166b9ac82ada461538a0214879e0a"
-  integrity sha512-/sJkKSmG+FRh/fPT+AsdWKQFFyhtpDt0r9hhJw+bA2dhxONMRByJO37HnOthfZ2AGcAR+qwK2NqDB/7XIDy+tg==
+react-3layer-decorators@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-3layer-decorators/-/react-3layer-decorators-1.0.3.tgz#0a10ee5336cc8d850e936215751b60c773e7908b"
+  integrity sha512-wTb01gTxuWuogVOA7ME8srq2PsMF5PrgiOWaQOuZo8hZpjFfOaF3sS6SAD8uvj2UjqQfykyBFS76pM5njIA4Xg==
   dependencies:
     "@babel/plugin-proposal-decorators" "^7.24.7"
     "@babel/plugin-syntax-decorators" "^7.24.7"
     "@babel/plugin-transform-class-properties" "^7.25.4"
+    dayjs "^1.11.13"
     moment "^2.30.1"
     reflect-metadata "^0.2.2"
     rollup "^4.21.0"
     rollup-plugin-typescript2 "^0.36.0"
     typescript "^5.5.4"
 
-react-3layer-ui-components@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/react-3layer-ui-components/-/react-3layer-ui-components-1.0.5.tgz#44cf5eafaa9783683ff67829e10c66b3d162fe7c"
-  integrity sha512-w2XxWdsJ0tkv5FgOHTFjmBdoaWqt++LT/9JPZH2a/JU+ncmTTNVSpVxRB+cK0xV5bbsFV5BtoYt3t1tlVnr/LA==
+react-3layer-ui-components@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/react-3layer-ui-components/-/react-3layer-ui-components-1.0.6.tgz#5d11cb69d27676bd4209ca1113a6d588b07276b8"
+  integrity sha512-THGY4b44PhTXX0OQKKnd/LofM8hWiESve14LE6Wyuo8NP99CuzkCwKWQGFrmsdIxvzo0D/77ZcezdL4PJoLJrw==
   dependencies:
     "@carbon/icons-react" "^11.45.0"
     "@rollup/plugin-json" "^6.1.0"
@@ -6887,10 +6875,10 @@ react-3layer-ui-components@^1.0.5:
     dayjs "^1.11.12"
     i18next "^23.12.3"
     moment "^2.30.1"
-    react-3layer-advance-filters "^1.0.4"
+    react-3layer-advance-filters "^1.0.5"
     react-3layer-axios-observable "^1.0.2"
-    react-3layer-common "^1.0.12"
-    react-3layer-decorators "^1.0.1"
+    react-3layer-common "^1.0.13"
+    react-3layer-decorators "^1.0.3"
     react-dropzone "^11.5.1"
     react-i18next "^15.0.1"
     react-image-crop "^9.0.5"
