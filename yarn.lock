@@ -2060,7 +2060,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-dom@18.2.0", "@types/react-dom@^18.3.0":
+"@types/react-dom@18.2.0":
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-18.2.0.tgz#374f28074bb117f56f58c4f3f71753bebb545156"
   integrity sha512-8yQrvS6sMpSwIovhPOwfyNf2Wz6v/B62LFSVYQ85+Rq3tLsBIG7rP5geMxaijTUxSkrO6RzN/IRuIAADYQsleA==
@@ -2108,7 +2108,7 @@
     "@types/history" "^4.7.11"
     "@types/react" "*"
 
-"@types/react@*", "@types/react@18.2.0", "@types/react@^18.3.4":
+"@types/react@*", "@types/react@18.2.0":
   version "18.2.0"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.0.tgz#15cda145354accfc09a18d2f2305f9fc099ada21"
   integrity sha512-0FLj93y5USLHdnhIhABk83rm8XEGA7kH3cr+YUlvxoUGp1xNt/DINUMvqPxLyOQMzLmZe8i4RTHbvb8MC7NmrA==
@@ -6831,19 +6831,18 @@ react-3layer-axios-observable@^1.0.2:
     rxjs "^7.8.1"
     typescript "^5.5.4"
 
-react-3layer-common@^1.0.7:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/react-3layer-common/-/react-3layer-common-1.0.11.tgz#5553c45db5e077e8a3ae800cf26a10b8336526f1"
-  integrity sha512-kkOuq9T0FkD4AoxfGrw5wa3Ju7IQk7c6EtOED+vEMiGt+KEeOyaQBYDkDZEMIpMhKWlrPVyhY2PGcDWQWD8aMw==
+react-3layer-common@^1.0.12:
+  version "1.0.12"
+  resolved "https://registry.yarnpkg.com/react-3layer-common/-/react-3layer-common-1.0.12.tgz#229e670880fb26712f1544dae2713349b3ec567c"
+  integrity sha512-qVIePaNTRdtE2cX/8VGeFIwPDPRhq2vrPSdmaAk5YlUXrbFaw5UUjiBDijdSCDurkLkRTsfiw+yhHsfpWJjyDQ==
   dependencies:
-    "@types/react" "^18.3.4"
-    "@types/react-dom" "^18.3.0"
+    axios "0.21.4"
     react "^18.3.1"
     react-3layer-axios-observable "^1.0.2"
     react-3layer-decorators "^1.0.2"
-    react-dom "^18.3.1"
-    rollup "^4.21.1"
+    rollup "^4.21.2"
     rollup-plugin-typescript2 "^0.36.0"
+    rxjs "^7.8.1"
     typescript "^5.5.4"
 
 react-3layer-commonnnn@^1.0.2:
@@ -6874,10 +6873,10 @@ react-3layer-decorators@^1.0.1, react-3layer-decorators@^1.0.2:
     rollup-plugin-typescript2 "^0.36.0"
     typescript "^5.5.4"
 
-react-3layer-ui-components@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/react-3layer-ui-components/-/react-3layer-ui-components-1.0.4.tgz#95a5302e43debdeb709ec41cfbdaf8885d69c03a"
-  integrity sha512-QUAyeAHuDq/7rHr+tpFz8qKn2auCviw7szqfiIk2NqkZyExAzW5VmNs+qN0dVewEqMKU2MesKxWvFmcbO6qeNA==
+react-3layer-ui-components@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-3layer-ui-components/-/react-3layer-ui-components-1.0.5.tgz#44cf5eafaa9783683ff67829e10c66b3d162fe7c"
+  integrity sha512-w2XxWdsJ0tkv5FgOHTFjmBdoaWqt++LT/9JPZH2a/JU+ncmTTNVSpVxRB+cK0xV5bbsFV5BtoYt3t1tlVnr/LA==
   dependencies:
     "@carbon/icons-react" "^11.45.0"
     "@rollup/plugin-json" "^6.1.0"
@@ -6890,7 +6889,7 @@ react-3layer-ui-components@^1.0.4:
     moment "^2.30.1"
     react-3layer-advance-filters "^1.0.4"
     react-3layer-axios-observable "^1.0.2"
-    react-3layer-common "^1.0.7"
+    react-3layer-common "^1.0.12"
     react-3layer-decorators "^1.0.1"
     react-dropzone "^11.5.1"
     react-i18next "^15.0.1"
@@ -6922,14 +6921,6 @@ react-dom@^18.2.0:
   dependencies:
     loose-envify "^1.1.0"
     scheduler "^0.23.0"
-
-react-dom@^18.3.1:
-  version "18.3.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.3.1.tgz#c2265d79511b57d479b3dd3fdfa51536494c5cb4"
-  integrity sha512-5m4nQKp+rZRb09LNH59GM4BxTh9251/ylbKIbpe7TpGxfJ+9kv6BLkLBXIjjspbgbnIBNqlI23tRnTWT0snUIw==
-  dependencies:
-    loose-envify "^1.1.0"
-    scheduler "^0.23.2"
 
 react-dropzone@^11.5.1:
   version "11.7.1"
@@ -7344,7 +7335,7 @@ rollup@^3.27.1:
   optionalDependencies:
     fsevents "~2.3.2"
 
-rollup@^4.21.0, rollup@^4.21.1, rollup@^4.21.2:
+rollup@^4.21.0, rollup@^4.21.2:
   version "4.21.2"
   resolved "https://nexus.truesight.asia/repository/npm-registry/rollup/-/rollup-4.21.2.tgz#f41f277a448d6264e923dd1ea179f0a926aaf9b7"
   integrity sha512-e3TapAgYf9xjdLvKQCkQTnbTKd4a6jwlpQSJJFokHGaX2IVjoEqkIIhiQfqsi0cdwlOD+tQGuOd5AJkc5RngBw==
@@ -7405,13 +7396,6 @@ scheduler@^0.23.0:
   version "0.23.0"
   resolved "https://nexus.truesight.asia/repository/npm-registry/scheduler/-/scheduler-0.23.0.tgz#ba8041afc3d30eb206a487b6b384002e4e61fdfe"
   integrity sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw==
-  dependencies:
-    loose-envify "^1.1.0"
-
-scheduler@^0.23.2:
-  version "0.23.2"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.23.2.tgz#414ba64a3b282892e944cf2108ecc078d115cdc3"
-  integrity sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==
   dependencies:
     loose-envify "^1.1.0"
 
