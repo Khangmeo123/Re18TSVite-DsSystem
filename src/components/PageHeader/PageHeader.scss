@@ -81,4 +81,25 @@
       }
     }
   }
+  &.page-header--primary {
+    background-color: var(--color-primary);
+    height: 146px;
+    .ant-breadcrumb {
+      color: #ffffff;
+      .ant-breadcrumb-separator {
+        color: #ffffff;
+      }
+    }
+    .page-header__title {
+      color: #ffffff;
+    }
+    .breadcrumb {
+      li {
+        color: #ffffff;
+        &.breadcrumb-active {
+          color: #0f62fe;
+        }
+      }
+    }
+  }
 }

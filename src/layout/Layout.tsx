@@ -13,7 +13,7 @@ const Layout: FC<PropsWithChildren<unknown>> = (
         <div className="layout-header">
           <Header
             logo={<IbmCloudPakSecurity size={24} />}
-            logoName="Global Admin"
+            logoName="eProcurement"
           />
         </div>
         <div className="layout-body">

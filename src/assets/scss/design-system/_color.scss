@@ -309,13 +309,26 @@ $palettes: (
       #{$keyname}: #{$value};
     }
   }
+  /* nav-bar colors */
+  --color-navbar: #eb6200;
+  --color-navbar-hover: #cc5500;
+  --color-navbar-active: #753300;
+  --color-navbar-blur: #ffd9be;
+  --color-navbar-underline-boxshadow: #ffffff;
+  --color-footer: #ffffff;
 
   /* main colors */
   /* used for the links, the button background color,... */
-  --color-primary: #0f62fe;
-  --color-primary-hover: #0050e6;
-  --color-primary-active: #002d9c;
-  --color-primary-blur: #d0e2ff;
+  // --color-primary: #0f62fe;
+  // --color-primary-hover: #0050e6;
+  // --color-primary-active: #002d9c;
+  // --color-primary-blur: #d0e2ff;
+
+  --color-primary: #eb6200;
+  --color-primary-hover: #cc5500;
+  --color-primary-active: #753300;
+  --color-primary-blur: #ffd9be;
+
   --color-secondary: #393939;
   --color-secondary-hover: #4c4c4c;
   --color-secondary-active: #6f6f6f;

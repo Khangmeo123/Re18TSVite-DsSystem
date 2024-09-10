@@ -30,9 +30,11 @@
         white-space: nowrap;
         color: var(--theme-text-color);
         max-width: 180px;
-        background: var(--theme-color);
+        // background: var(--theme-color);
+        background: var(--color-navbar);
         &.active {
-          box-shadow: inset 0 -3px 0 var(--color-primary);
+          // box-shadow: inset 0 -3px 0 var(--color-primary);
+          box-shadow: inset 0 -3px 0 var(--color-navbar-underline-boxshadow);
         }
 
         .navbar-dropdown__toggle {
@@ -45,11 +47,13 @@
           justify-content: space-between;
           height: 48px;
           &.active {
-            box-shadow: inset 0 -3px 0 var(--color-primary);
+            // box-shadow: inset 0 -3px 0 var(--color-primary);
+            box-shadow: inset 0 -3px 0 var(--color-navbar-underline-boxshadow);
           }
         }
         &:hover {
-          background: var(--palette-gray-80);
+          // background: var(--palette-gray-80);
+          background: var(--color-navbar-hover);
           color: var(--theme-text-color) !important;
           .navbar-dropdown__item-icon {
             transform: rotate(180deg);
@@ -71,7 +75,8 @@
 
         &:focus-within,
         &:focus {
-          background: var(--palette-gray-80);
+          // background: var(--palette-gray-80);
+          background: var(--color-navbar-active);
 
           & .navbar-dropdown__menu-show {
             position: static;
