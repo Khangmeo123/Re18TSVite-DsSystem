@@ -1,5 +1,32 @@
-import React, { useContext } from "react";
 import { Locked, Password, TrashCan, Unlocked } from "@carbon/icons-react";
+import { Modal } from "antd";
+import { ColumnProps } from "antd/lib/table";
+import { AxiosError } from "axios";
+import {
+  globalAdminType,
+  organizationAdminType,
+  siteAdminType,
+  user,
+} from "config/const";
+import {
+  APP_USER_EDIT_ROUTE,
+  ORGANIZATION_TYPE_ROUTE,
+} from "config/route-const";
+import { DEFAULT_PAGE_SIZE_OPTION } from "core/config/consts";
+import appMessageService from "core/services/common-services/app-message-service";
+import { utilService } from "core/services/common-services/util-service";
+import { masterService } from "core/services/page-services/master-service";
+import {
+  getAntOrderType,
+  tableService,
+} from "core/services/page-services/table-service";
+import { FilterAction, KeyType } from "core/services/service-types";
+import { ADMIN_TYPE, AdminType } from "models/AdminType";
+import { AppUser, AppUserFilter } from "models/AppUser";
+import { Profile } from "models/Profile";
+import { Status } from "models/Status";
+import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
+import React, { useContext } from "react";
 import {
   ActionBarComponent,
   // BadgeText,
@@ -12,38 +39,11 @@ import {
   StandardTable,
   StatusLine,
 } from "react-3layer-ui-components";
-import { useTranslation } from "react-i18next";
-import { AppUser, AppUserFilter } from "models/AppUser";
-import {
-  getAntOrderType,
-  tableService,
-} from "core/services/page-services/table-service";
-import { masterService } from "core/services/page-services/master-service";
-import {
-  APP_USER_EDIT_ROUTE,
-  ORGANIZATION_TYPE_ROUTE,
-} from "config/route-const";
-import { DEFAULT_PAGE_SIZE_OPTION } from "core/config/consts";
-import { ColumnProps } from "antd/lib/table";
-import { Status } from "models/Status";
-import type { AppUserChangePasswordDrawerType } from "../AppUserDrawer/ChangePasswordDrawer";
-import { ADMIN_TYPE, AdminType } from "models/AdminType";
 import type { ListOverflowMenu } from "react-3layer-ui-components/dist/esm/types/components/OverflowMenu/OverflowMenuList";
-import { Modal } from "antd";
-import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
-import {
-  globalAdminType,
-  organizationAdminType,
-  siteAdminType,
-  user,
-} from "config/const";
-import appMessageService from "core/services/common-services/app-message-service";
-import { AppUserMaster, AppUserMasterContext } from "./MasterHook";
-import { utilService } from "core/services/common-services/util-service";
-import { AxiosError } from "axios";
+import { useTranslation } from "react-i18next";
 import { useAppSelector } from "rtk/hook";
-import { Profile } from "models/Profile";
-import { FilterAction, KeyType } from "core/services/service-types";
+import type { AppUserChangePasswordDrawerType } from "../AppUserDrawer/ChangePasswordDrawer";
+import { AppUserMaster, AppUserMasterContext } from "./MasterHook";
 
 export interface MasterTableProps {
   filter?: AppUserFilter;

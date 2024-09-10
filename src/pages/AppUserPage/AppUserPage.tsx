@@ -37,5 +37,5 @@ function AppUserPage() {
   );
 }
 
-export { AppUserMaster };
+export { AppUserMaster, AppUserDetail };
 export default AppUserPage;

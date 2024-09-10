@@ -1,7 +1,7 @@
 import { ROOT_ROUTE } from "core/config/consts";
 import { lazy } from "react";
 import { Redirect } from "react-router-dom";
-import { APP_USER_MASTER_ROUTE, DASHBROAD_ROUTE } from "./route-const";
+import { APP_USER_ROUTE, DASHBROAD_ROUTE } from "./route-const";
 import { Route } from "./config-type";
 import DashbroadPage from "pages/DashbroadPage/DashbroadPage";
 import AppUserPage from "pages/AppUserPage/AppUserPage";
@@ -13,7 +13,7 @@ const userRoutes: Route[] = [
     component: DashbroadPage,
   },
   {
-    path: APP_USER_MASTER_ROUTE,
+    path: APP_USER_ROUTE,
     component: AppUserPage,
   },
 
