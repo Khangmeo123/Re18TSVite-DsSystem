@@ -1,4 +1,3 @@
-import type { Moment } from "moment";
 import React, {
   Dispatch,
   Reducer,
@@ -20,6 +19,7 @@ import memoize from "fast-memoize";
 import { utilService } from "core/services/common-services/util-service";
 import { FilterAction, FilterActionEnum } from "../service-types";
 import { Model, ModelFilter } from "react-3layer-common";
+import { Dayjs } from "dayjs";
 
 export function filterReducer<TFilter extends ModelFilter>(
   state: TFilter,
@@ -259,7 +259,7 @@ export const filterService = {
               fieldName: string;
               fieldType: string | [string, string];
             }) =>
-            (date: Moment | [Moment, Moment]) => {
+            (date: Dayjs | [Dayjs, Dayjs]) => {
               const { fieldName, fieldType } = config;
 
               if (date instanceof Array && fieldType instanceof Array) {

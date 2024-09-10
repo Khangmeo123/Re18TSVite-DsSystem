@@ -1,15 +1,20 @@
 import { ROOT_ROUTE } from "core/config/consts";
 import { lazy } from "react";
 import { Redirect } from "react-router-dom";
-import { DASHBROAD_ROUTE } from "./route-const";
+import { APP_USER_MASTER_ROUTE, DASHBROAD_ROUTE } from "./route-const";
 import { Route } from "./config-type";
 import DashbroadPage from "pages/DashbroadPage/DashbroadPage";
+import AppUserPage from "pages/AppUserPage/AppUserPage";
 
 const userRoutes: Route[] = [
   // Adding routes here:
   {
     path: DASHBROAD_ROUTE,
     component: DashbroadPage,
+  },
+  {
+    path: APP_USER_MASTER_ROUTE,
+    component: AppUserPage,
   },
 
   // This base route should be at the end of all other routes

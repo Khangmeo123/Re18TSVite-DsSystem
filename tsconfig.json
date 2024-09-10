@@ -20,7 +20,21 @@
     "jsx": "react-jsx",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "typeRoots": ["node_modules/@types/", "@types/"]
+    "typeRoots": ["node_modules/@types/", "@types/"],
+
+
+   
+    "declaration": true,
+    "declarationDir": "types",
+    
+    
+    
+    
+    
+    
+    
+    
+
   },
   "include": ["src"]
 }
