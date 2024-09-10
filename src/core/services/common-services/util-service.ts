@@ -1,10 +1,9 @@
 import { AxiosError } from "axios";
 import { Menu } from "config/config-type";
-import type { Moment } from "moment";
-import moment from "moment";
 import React, { RefObject } from "react";
 import { Model } from "react-3layer-common";
 import { AnyObj, TreeNode, ValidateStatus } from "../service-types";
+import dayjs, { Dayjs } from "dayjs";
 
 export const utilService = {
   useClickOutside(
@@ -137,8 +136,8 @@ export const utilService = {
     return nodes;
   },
 
-  toMomentDate(date: string): Moment {
-    return moment(date);
+  toDayjsDate(date: string): Dayjs {
+    return dayjs(date);
   },
 
   isEmpty(obj: AnyObj) {

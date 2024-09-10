@@ -1,6 +1,6 @@
-import type { Moment } from "moment";
+import { Dayjs } from "dayjs";
 import { Model } from "react-3layer-common";
-import { Field, MomentField, ObjectList } from "react-3layer-decorators";
+import { DayjsField, Field, ObjectList } from "react-3layer-decorators";
 
 export class RequestHistoryDisplayFieldContent {
   public requestId?: number;
@@ -22,8 +22,8 @@ export class RequestHistory extends Model {
   public actorTypeId?: number;
   @Field(String)
   public actionName?: string;
-  @MomentField()
-  public savedAt?: Moment;
+  @DayjsField()
+  public savedAt?: Dayjs;
   public content?: unknown;
   @Field(Number)
   public versionId?: number;

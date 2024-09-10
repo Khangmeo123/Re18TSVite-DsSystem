@@ -2,13 +2,12 @@ import { Email, EmailNew, Launch } from "@carbon/icons-react";
 import { Switch } from "antd";
 import classNames from "classnames";
 import { formatDateTimeFromNow } from "core/helpers/date-time";
-import "moment/min/locales";
 import React, { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { utilService } from "core/services/common-services/util-service";
 import { data } from "./Data";
 import "./NotificationDropdown.scss";
-import moment from "moment";
+import dayjs from "dayjs";
 
 interface NotificationDropdownProps {
   setActive: React.Dispatch<React.SetStateAction<boolean>>;
@@ -56,7 +55,7 @@ const NotificationDropdown = (props: NotificationDropdownProps) => {
 
                         <span className="notification-item__time">
                           {formatDateTimeFromNow(
-                            moment(notification?.time),
+                            dayjs(notification?.time),
                             "vi"
                           )}
                         </span>

@@ -1,3 +1,6 @@
+import dayjs, { Dayjs } from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import duration from "dayjs/plugin/duration";
 import {
   STANDARD_DATE_FORMAT_INVERSE,
   STANDARD_DATE_REGEX,
@@ -7,47 +10,46 @@ import {
   STANDARD_TIME_FORMAT,
   STANDARD_TIME_REGEX,
 } from "./../config/consts";
-import moment from "moment";
-import type { Moment } from "moment";
-
+dayjs.extend(relativeTime);
+dayjs.extend(duration);
 export function formatDate(
-  date: Moment,
+  date: Dayjs,
   dateFormat: string = STANDARD_DATE_FORMAT_INVERSE
 ) {
   if (date) {
     if (typeof date === "object" && "format" in date) {
       return date.format(dateFormat);
     } else {
-      return moment(date).format(dateFormat);
+      return dayjs(date).format(dateFormat);
     }
   }
   return null;
 }
 
 export function formatTime(
-  time: Moment,
+  time: Dayjs,
   timeFormat: string = STANDARD_TIME_FORMAT
 ) {
   if (!time) return null;
   if (typeof time === "object" && "format" in time) {
     return time.format(timeFormat);
   }
-  return moment(time).format(timeFormat);
+  return dayjs(time).format(timeFormat);
 }
 
 export function formatDateTime(
-  time: Moment,
+  time: Dayjs,
   dateTimeFormat: string = STANDARD_DATE_TIME_FORMAT_VIEW
 ) {
   if (!time) return null;
   if (typeof time === "object" && "format" in time) {
     return time.format(dateTimeFormat);
   }
-  return moment(time).format(dateTimeFormat);
+  return dayjs(time).format(dateTimeFormat);
 }
 
-export function formatDateTimeFromNow(time: Moment, lang: string) {
-  return moment(time).locale(lang).fromNow();
+export function formatDateTimeFromNow(time: Dayjs, lang: string) {
+  return dayjs(time).locale(lang).fromNow();
 }
 
 export function isDateValue(date?: string) {
@@ -69,9 +71,9 @@ export function isDateTimeValue(time?: string) {
 
 export function timeAgo(time: string) {
   time = time.slice(0, -1);
-  const pastTime = moment(time);
-  const currentTime = moment();
-  const seconds = moment.duration(currentTime.diff(pastTime)).asSeconds();
+  const pastTime = dayjs(time);
+  const currentTime = dayjs();
+  const seconds = dayjs.duration(currentTime.diff(pastTime)).asSeconds();
 
   const time_formats = [
     [60, "giây trước", 1], // 60

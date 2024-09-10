@@ -20,7 +20,6 @@ import _drop from "lodash/drop";
 import { Model, ModelFilter, OrderType } from "react-3layer-common";
 import { finalize, forkJoin, Observable } from "rxjs";
 import { webService } from "../common-services/web-service";
-import type { Moment } from "moment";
 import { RowSelectionType, TableRowSelection } from "antd/lib/table/interface";
 import { v4 as uuidv4 } from "uuid";
 import appMessageService from "core/services/common-services/app-message-service";
@@ -33,6 +32,7 @@ import {
   ListState,
   KeyType,
 } from "../service-types";
+import { Dayjs } from "dayjs";
 
 function listReducer<T>(state: ListState<T>, action: ListAction<T>) {
   switch (action.type) {
@@ -606,109 +606,109 @@ export const listService = {
           }
 
           // DateFilter
-          // Convert item value and filter value into Moment-based time first
+          // Convert item value and filter value into Dayjs-based time first
           if (fType instanceof DateFilter) {
             Object.entries(fType).forEach(([fTypeKey, fValue]) => {
               if (typeof fValue === "object" && fValue !== null) {
                 switch (fTypeKey) {
                   case "equal":
                     list = list.filter((i: T) => {
-                      const iValue: number = (i[fKey] as Moment)
+                      const iValue: number = (i[fKey] as Dayjs)
                         ?.toDate()
                         .getTime();
-                      const fMoment: number = (fValue as Moment)
+                      const fDayjs: number = (fValue as Dayjs)
                         ?.toDate()
                         .getTime();
                       if (
                         typeof iValue === "number" &&
-                        typeof fMoment == "number"
+                        typeof fDayjs == "number"
                       ) {
-                        return iValue === fMoment;
+                        return iValue === fDayjs;
                       }
                       return false;
                     });
                     break;
                   case "notEqual":
                     list = list.filter((i: T) => {
-                      const iValue: number = (i[fKey] as Moment)
+                      const iValue: number = (i[fKey] as Dayjs)
                         ?.toDate()
                         .getTime();
-                      const fMoment: number = (fValue as Moment)
+                      const fDayjs: number = (fValue as Dayjs)
                         ?.toDate()
                         .getTime();
                       if (
                         typeof iValue === "number" &&
-                        typeof fMoment == "number"
+                        typeof fDayjs == "number"
                       ) {
-                        return iValue !== fMoment;
+                        return iValue !== fDayjs;
                       }
                       return false;
                     });
                     break;
                   case "less":
                     list = list.filter((i: T) => {
-                      const iValue: number = (i[fKey] as Moment)
+                      const iValue: number = (i[fKey] as Dayjs)
                         ?.toDate()
                         .getTime();
-                      const fMoment: number = (fValue as Moment)
+                      const fDayjs: number = (fValue as Dayjs)
                         ?.toDate()
                         .getTime();
                       if (
                         typeof iValue === "number" &&
-                        typeof fMoment == "number"
+                        typeof fDayjs == "number"
                       ) {
-                        return iValue < fMoment;
+                        return iValue < fDayjs;
                       }
                       return false;
                     });
                     break;
                   case "lessEqual":
                     list = list.filter((i: T) => {
-                      const iValue: number = (i[fKey] as Moment)
+                      const iValue: number = (i[fKey] as Dayjs)
                         ?.toDate()
                         .getTime();
-                      const fMoment: number = (fValue as Moment)
+                      const fDayjs: number = (fValue as Dayjs)
                         ?.toDate()
                         .getTime();
                       if (
                         typeof iValue === "number" &&
-                        typeof fMoment == "number"
+                        typeof fDayjs == "number"
                       ) {
-                        return iValue <= fMoment;
+                        return iValue <= fDayjs;
                       }
                       return false;
                     });
                     break;
                   case "greater":
                     list = list.filter((i: T) => {
-                      const iValue: number = (i[fKey] as Moment)
+                      const iValue: number = (i[fKey] as Dayjs)
                         ?.toDate()
                         .getTime();
-                      const fMoment: number = (fValue as Moment)
+                      const fDayjs: number = (fValue as Dayjs)
                         ?.toDate()
                         .getTime();
                       if (
                         typeof iValue === "number" &&
-                        typeof fMoment == "number"
+                        typeof fDayjs == "number"
                       ) {
-                        return iValue > fMoment;
+                        return iValue > fDayjs;
                       }
                       return false;
                     });
                     break;
                   case "greaterEqual":
                     list = list.filter((i: T) => {
-                      const iValue: number = (i[fKey] as Moment)
+                      const iValue: number = (i[fKey] as Dayjs)
                         ?.toDate()
                         .getTime();
-                      const fMoment: number = (fValue as Moment)
+                      const fDayjs: number = (fValue as Dayjs)
                         ?.toDate()
                         .getTime();
                       if (
                         typeof iValue === "number" &&
-                        typeof fMoment == "number"
+                        typeof fDayjs == "number"
                       ) {
-                        return iValue >= fMoment;
+                        return iValue >= fDayjs;
                       }
                       return false;
                     });
@@ -872,28 +872,28 @@ export const listService = {
             if (fType instanceof DateFilter) {
               Object.entries(fType).forEach(([fTypeKey, fValue]) => {
                 if (typeof fValue === "object" && fValue !== null) {
-                  const iValue = (currentNode[fKey] as Moment)
+                  const iValue = (currentNode[fKey] as Dayjs)
                     ?.toDate()
                     .getTime();
-                  const fMoment = (fValue as Moment)?.toDate().getTime();
+                  const fDayjs = (fValue as Dayjs)?.toDate().getTime();
                   switch (fTypeKey) {
                     case "equal":
-                      conditional = conditional && iValue === fMoment;
+                      conditional = conditional && iValue === fDayjs;
                       break;
                     case "notEqual":
-                      conditional = conditional && iValue !== fMoment;
+                      conditional = conditional && iValue !== fDayjs;
                       break;
                     case "less":
-                      conditional = conditional && iValue < fMoment;
+                      conditional = conditional && iValue < fDayjs;
                       break;
                     case "lessEqual":
-                      conditional = conditional && iValue <= fMoment;
+                      conditional = conditional && iValue <= fDayjs;
                       break;
                     case "greater":
-                      conditional = conditional && iValue > fMoment;
+                      conditional = conditional && iValue > fDayjs;
                       break;
                     case "greaterEqual":
-                      conditional = conditional && iValue >= fMoment;
+                      conditional = conditional && iValue >= fDayjs;
                       break;
                     default:
                       conditional = true;

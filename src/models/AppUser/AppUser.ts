@@ -4,7 +4,6 @@ import { AppUserSubSystemMapping } from "models/AppUserSubSystemMapping";
 import { Gender } from "models/Gender";
 import { Organization } from "models/Organization";
 import { Status } from "models/Status";
-import type { Moment } from "moment";
 import { Model } from "react-3layer-common";
 import { Field, DayjsField } from "react-3layer-decorators";
 
@@ -39,7 +38,7 @@ export class LoginUser extends Model {
   public capcha?: string;
 
   @DayjsField()
-  public otpExpired?: Moment;
+  public otpExpired?: Dayjs;
 }
 
 export class AppUser extends Model {

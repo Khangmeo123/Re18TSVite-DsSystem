@@ -1,8 +1,8 @@
+import { Dayjs } from "dayjs";
 import { OrganizationType } from "models/OrganizationType";
 import { Status } from "models/Status";
-import type { Moment } from "moment";
 import { Model } from "react-3layer-common";
-import { Field, MomentField } from "react-3layer-decorators";
+import { Field, DayjsField } from "react-3layer-decorators";
 
 export class Organization extends Model {
   @Field(Number)
@@ -44,14 +44,14 @@ export class Organization extends Model {
   @Field(String)
   public note?: string;
 
-  @MomentField()
-  public createdAt?: Moment;
+  @DayjsField()
+  public createdAt?: Dayjs;
 
-  @MomentField()
-  public updatedAt?: Moment;
+  @DayjsField()
+  public updatedAt?: Dayjs;
 
-  @MomentField()
-  public deletedAt?: Moment;
+  @DayjsField()
+  public deletedAt?: Dayjs;
   @Field(String)
   public rowId?: string;
 

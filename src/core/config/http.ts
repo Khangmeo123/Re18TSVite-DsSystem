@@ -1,17 +1,18 @@
 import { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import { FORBIDENT_ROUTE } from "core/config/consts";
-import moment from "moment";
+
 import { Repository } from "react-3layer-common";
 import appMessageService, {
   messageType,
 } from "core/services/common-services/app-message-service";
 import { createBrowserHistory } from "history";
+import dayjs from "dayjs";
 
 export const httpConfig: AxiosRequestConfig = {
   withCredentials: false,
   headers: {
     "Content-Type": "application/json",
-    "X-TimeZone": moment().utcOffset() / 60,
+    "X-TimeZone": dayjs().utcOffset() / 60,
   },
 };
 

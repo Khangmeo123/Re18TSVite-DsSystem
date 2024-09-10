@@ -1,6 +1,6 @@
-import type { Moment } from "moment";
+import { Dayjs } from "dayjs";
 import { Model } from "react-3layer-common";
-import { Field, MomentField } from "react-3layer-decorators";
+import { DayjsField, Field } from "react-3layer-decorators";
 
 export class LoginUser extends Model {
   @Field(String)
@@ -15,6 +15,6 @@ export class LoginUser extends Model {
   @Field(String)
   public otpCode?: string;
 
-  @MomentField()
-  public otpExpired?: Moment;
+  @DayjsField()
+  public otpExpired?: Dayjs;
 }

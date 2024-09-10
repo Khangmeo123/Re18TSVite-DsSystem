@@ -1,7 +1,7 @@
-import type { Moment } from "moment";
-import { Dispatch, useMemo, useCallback } from "react";
-import { Model } from "react-3layer-common";
+import { Dayjs } from "dayjs";
 import memoize from "fast-memoize";
+import { Dispatch, useCallback, useMemo } from "react";
+import { Model } from "react-3layer-common";
 import * as yup from "yup";
 import {
   ConfigField,
@@ -197,7 +197,7 @@ export const fieldService = {
     */
     const handleChangeDateField = useMemo(
       () =>
-        memoize((config: ConfigField) => (date: Moment | [Moment, Moment]) => {
+        memoize((config: ConfigField) => (date: Dayjs | [Dayjs, Dayjs]) => {
           const { fieldName, validator, sideEffectFunc } = config;
           if (date instanceof Array && fieldName instanceof Array) {
             dispatch({
