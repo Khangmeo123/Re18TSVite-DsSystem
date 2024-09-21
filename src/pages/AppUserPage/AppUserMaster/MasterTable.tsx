@@ -28,7 +28,6 @@ import { Status } from "models/Status";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 import React, { useContext } from "react";
 import {
-  ActionBarComponent,
   // BadgeText,
   Button,
   LayoutCell,
@@ -38,8 +37,8 @@ import {
   Pagination,
   StandardTable,
   StatusLine,
-} from "react-3layer-ui-components";
-import type { ListOverflowMenu } from "react-3layer-ui-components/dist/esm/types/components/OverflowMenu/OverflowMenuList";
+} from "react-components-design-system";
+import type { ListOverflowMenu } from "react-components-design-system/dist/esm/types/components/OverflowMenu/OverflowMenuList";
 import { useTranslation } from "react-i18next";
 import { useAppSelector } from "rtk/hook";
 import type { AppUserChangePasswordDrawerType } from "../AppUserDrawer/ChangePasswordDrawer";
@@ -482,21 +481,7 @@ const MasterTable = () => {
   const columns: ColumnProps<AppUser>[] = React.useMemo(
     () => [
       {
-        title: ({ sortColumns }) => {
-          const sortedColumn = sortColumns?.find(
-            ({ column }) => column.key === "code"
-          );
-          return (
-            <div>
-              <LayoutHeader
-                orderType="left"
-                title={translate("appUsers.code")}
-                sortedColumn={sortedColumn}
-                isSorter
-              />
-            </div>
-          );
-        },
+        title: translate("appUsers.code"),
         key: "code",
         dataIndex: "code",
         sorter: true,
@@ -504,28 +489,14 @@ const MasterTable = () => {
         ellipsis: true,
         render(...params: [string, AppUser, number]) {
           return (
-            <LayoutCell orderType="left" tableSize="md">
+            <LayoutCell>
               <OneLineText value={params[0]} />
             </LayoutCell>
           );
         },
       },
       {
-        title: ({ sortColumns }) => {
-          const sortedColumn = sortColumns?.find(
-            ({ column }) => column.key === "displayName"
-          );
-          return (
-            <div>
-              <LayoutHeader
-                orderType="left"
-                title={translate("appUsers.displayName")}
-                sortedColumn={sortedColumn}
-                isSorter
-              />
-            </div>
-          );
-        },
+        title: translate("appUsers.displayName"),
         key: "displayName",
         dataIndex: "displayName",
         sorter: true,
@@ -536,7 +507,7 @@ const MasterTable = () => {
         ellipsis: true,
         render(...params: [string, AppUser, number]) {
           return (
-            <LayoutCell orderType="left" tableSize="md">
+            <LayoutCell>
               <OneLineText countCharacters={45} value={params[0]} />
             </LayoutCell>
           );
@@ -544,21 +515,7 @@ const MasterTable = () => {
       },
 
       {
-        title: ({ sortColumns }) => {
-          const sortedColumn = sortColumns?.find(
-            ({ column }) => column.key === "email"
-          );
-          return (
-            <div>
-              <LayoutHeader
-                orderType="left"
-                title={translate("appUsers.email")}
-                sortedColumn={sortedColumn}
-                isSorter
-              />
-            </div>
-          );
-        },
+        title: translate("appUsers.email"),
         key: "email",
         dataIndex: "email",
         sorter: true,
@@ -569,7 +526,7 @@ const MasterTable = () => {
         ellipsis: true,
         render(...params: [string, AppUser, number]) {
           return (
-            <LayoutCell orderType="left" tableSize="md">
+            <LayoutCell>
               <OneLineText value={params[0]} countCharacters={80} />
             </LayoutCell>
           );
@@ -601,21 +558,7 @@ const MasterTable = () => {
       // },
 
       {
-        title: ({ sortColumns }) => {
-          const sortedColumn = sortColumns?.find(
-            ({ column }) => column.key === "status"
-          );
-          return (
-            <div>
-              <LayoutHeader
-                orderType="left"
-                title={translate("appUsers.status")}
-                sortedColumn={sortedColumn}
-                isSorter
-              />
-            </div>
-          );
-        },
+        title: translate("appUsers.status"),
         key: "status",
         dataIndex: "status",
         sorter: true,
@@ -626,7 +569,7 @@ const MasterTable = () => {
         ellipsis: true,
         render(status: Status) {
           return (
-            <LayoutCell orderType="left" tableSize="md">
+            <LayoutCell>
               <StatusLine value={status?.name} color={status?.color} />
             </LayoutCell>
           );
@@ -653,7 +596,7 @@ const MasterTable = () => {
 
   return (
     <>
-      <ActionBarComponent
+      {/* <ActionBarComponent
         selectedRowKeys={selectedRowKeys}
         setSelectedRowKeys={setSelectedRowKeys}
         translateTitleCancelButton={translate("general.actions.close")}
@@ -696,14 +639,13 @@ const MasterTable = () => {
         >
           {translate("appUsers.actions.active")}
         </Button>
-      </ActionBarComponent>
+      </ActionBarComponent> */}
       <div className="page-master__table">
         <StandardTable
           rowKey={"id"}
           columns={columns}
           dataSource={listData}
           isDragable={true}
-          tableSize={"md"}
           loading={loadingList}
           onChange={handleTableChange}
           rowSelection={rowSelection}

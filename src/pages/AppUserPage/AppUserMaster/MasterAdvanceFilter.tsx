@@ -9,7 +9,7 @@ import {
   AdvanceDateRangeFilter,
   AdvanceStringFilter,
   CheckboxGroup,
-} from "react-3layer-ui-components";
+} from "react-components-design-system";
 import { Search } from "@carbon/icons-react";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 import { AppUserMaster, AppUserMasterContext } from "./MasterHook";

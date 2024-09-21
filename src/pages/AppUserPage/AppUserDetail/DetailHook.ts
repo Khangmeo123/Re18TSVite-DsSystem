@@ -12,10 +12,10 @@ import { SubSystem } from "models/SubSystem";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory, useRouteMatch } from "react-router-dom";
-import type { ListOverflowMenu } from "react-3layer-ui-components/dist/esm/types/components/OverflowMenu/OverflowMenuList";
+import type { ListOverflowMenu } from "react-components-design-system/dist/esm/types/components/OverflowMenu/OverflowMenuList";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 import { useAppSelector } from "rtk/hook";
-import type { FileModel } from "react-3layer-ui-components/dist/esm/types/components/UploadFile/UploadFile";
+import type { FileModel } from "react-components-design-system/dist/esm/types/components/UploadFile/UploadFile";
 import { APP_USER_ADMIN_TYPE_MASTER_ROUTE } from "config/route-const";
 import { AppUserSubSystemMapping } from "models/AppUserSubSystemMapping";
 

@@ -6406,10 +6406,25 @@ react-3layer-decorators@^1.0.3:
     rollup-plugin-typescript2 "^0.36.0"
     typescript "^5.5.4"
 
-react-3layer-ui-components@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/react-3layer-ui-components/-/react-3layer-ui-components-1.0.6.tgz#5d11cb69d27676bd4209ca1113a6d588b07276b8"
-  integrity sha512-THGY4b44PhTXX0OQKKnd/LofM8hWiESve14LE6Wyuo8NP99CuzkCwKWQGFrmsdIxvzo0D/77ZcezdL4PJoLJrw==
+react-app-rewire-postcss@^3.0.2:
+  version "3.0.2"
+  resolved "https://nexus.truesight.asia/repository/npm-registry/react-app-rewire-postcss/-/react-app-rewire-postcss-3.0.2.tgz#8a1f98a0c2dd300f406f948f2628d1fa97c6f38d"
+  integrity sha512-sGjIIzQ4sQE8r2ZeSCokf+hKLxOr5i8J0iAlg0kxwXRdy6bDrPa345EMdYPPzUZQxnZgZIsFL+QyMWtJHulEDg==
+  dependencies:
+    postcss-loader "^3.0.0"
+
+react-avatar@^5.0.3:
+  version "5.0.3"
+  resolved "https://nexus.truesight.asia/repository/npm-registry/react-avatar/-/react-avatar-5.0.3.tgz#42c6b7dc992a2e73fe83c0a1c2ceeac4c7bfae21"
+  integrity sha512-DNc+qkWH9QehSEZqHBhqpXWsPY+rU9W7kD68QFHfu8Atfsvx/3ML0DzAePgTUd96nCXQQ3KZMcC3LKYT8FiBIg==
+  dependencies:
+    is-retina "^1.0.3"
+    md5 "^2.0.0"
+
+react-components-design-system@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/react-components-design-system/-/react-components-design-system-1.0.2.tgz#46bac880d37db2381c95b4878baa873a92522f99"
+  integrity sha512-WwULzEFBpiTfVG4RAWGAwbi64QHDO3yNHCpxhoSGTyek1I1X3lRbYE/EpVXwlNXboiP28CYbM+MS/qDYAjd+1Q==
   dependencies:
     "@carbon/icons-react" "^11.45.0"
     "@rollup/plugin-json" "^6.1.0"
@@ -6431,21 +6446,7 @@ react-3layer-ui-components@^1.0.6:
     react-router-dom "^6.25.1"
     reflect-metadata "^0.2.2"
     rxjs "^7.8.1"
-
-react-app-rewire-postcss@^3.0.2:
-  version "3.0.2"
-  resolved "https://nexus.truesight.asia/repository/npm-registry/react-app-rewire-postcss/-/react-app-rewire-postcss-3.0.2.tgz#8a1f98a0c2dd300f406f948f2628d1fa97c6f38d"
-  integrity sha512-sGjIIzQ4sQE8r2ZeSCokf+hKLxOr5i8J0iAlg0kxwXRdy6bDrPa345EMdYPPzUZQxnZgZIsFL+QyMWtJHulEDg==
-  dependencies:
-    postcss-loader "^3.0.0"
-
-react-avatar@^5.0.3:
-  version "5.0.3"
-  resolved "https://nexus.truesight.asia/repository/npm-registry/react-avatar/-/react-avatar-5.0.3.tgz#42c6b7dc992a2e73fe83c0a1c2ceeac4c7bfae21"
-  integrity sha512-DNc+qkWH9QehSEZqHBhqpXWsPY+rU9W7kD68QFHfu8Atfsvx/3ML0DzAePgTUd96nCXQQ3KZMcC3LKYT8FiBIg==
-  dependencies:
-    is-retina "^1.0.3"
-    md5 "^2.0.0"
+    uuid "^10.0.0"
 
 react-dom@^18.2.0:
   version "18.2.0"
@@ -7553,6 +7554,11 @@ util-deprecate@^1.0.2:
   version "1.0.2"
   resolved "https://nexus.truesight.asia/repository/npm-registry/util-deprecate/-/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==
+
+uuid@^10.0.0:
+  version "10.0.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-10.0.0.tgz#5a95aa454e6e002725c79055fd42aaba30ca6294"
+  integrity sha512-8XkAphELsDnEGrDxUOHB3RGvXz6TeuYSGEZBOjtTtPm2lwhGBjLgOzLHB63IUWfBpNucQjND6d3AOudO+H3RWQ==
 
 uuid@^9.0.0:
   version "9.0.0"

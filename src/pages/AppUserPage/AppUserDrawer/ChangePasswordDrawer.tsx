@@ -7,7 +7,7 @@ import { utilService } from "core/services/common-services/util-service";
 import { AppUser, User } from "models/AppUser";
 import React, { useContext, useImperativeHandle } from "react";
 import { useTranslation } from "react-i18next";
-import { Drawer, FormItem, InputText } from "react-3layer-ui-components";
+import { Drawer, FormItem, InputText } from "react-components-design-system";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 import type { KeyType } from "core/services/service-types";
 import {
@@ -169,10 +169,10 @@ const ChangePasswordDrawer = React.forwardRef<
                   )}
                   className={"tio-account_square_outlined"}
                   onChange={handleChangeField("newPassword")}
-                  action={{
-                    name: translate("appUsers.password.random"),
-                    action: handleRandomPassword,
-                  }}
+                  // action={{
+                  //   name: translate("appUsers.password.random"),
+                  //   action: handleRandomPassword,
+                  // }}
                   typeInput={showNewPassword ? "text" : "password"}
                   suffix={
                     <>

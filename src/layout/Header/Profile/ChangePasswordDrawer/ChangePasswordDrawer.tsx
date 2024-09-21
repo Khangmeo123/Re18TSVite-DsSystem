@@ -7,7 +7,7 @@ import { utilService } from "core/services/common-services/util-service";
 import { Profile, ProfileChangePassword } from "core/models/Profile";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Drawer, FormItem, InputText } from "react-3layer-ui-components";
+import { Drawer, FormItem, InputText } from "react-components-design-system";
 import { profileRepository } from "core/repositories/ProfileRepository";
 import { finalize } from "rxjs";
 
@@ -161,12 +161,12 @@ const ChangePasswordDrawer = (props: ChangePasswordDrawerProps) => {
                     "profile.changePassword.newPassword.placeholder"
                   )}
                   onChange={handleChangeField("newPassword")}
-                  action={{
-                    name: translate(
-                      "profile.changePassword.createRandomPassword"
-                    ),
-                    action: handleCreateRandomPassword,
-                  }}
+                  // action={{
+                  //   name: translate(
+                  //     "profile.changePassword.createRandomPassword"
+                  //   ),
+                  //   action: handleCreateRandomPassword,
+                  // }}
                   suffix={
                     <>
                       {showNewPassword ? (

@@ -2,7 +2,7 @@ import PageHeader from "components/PageHeader/PageHeader";
 import React, { ReactElement } from "react";
 import "./FileTemplate.scss";
 import useFileTemplateHook from "./FileTemplateHook";
-import { Button, InputText, TextArea } from "react-3layer-ui-components";
+import { Button, InputText, TextArea } from "react-components-design-system";
 import { Col, Dropdown, Menu, Row, Spin } from "antd";
 import { Observable } from "rxjs";
 import { FileTemplate, FileTemplateInput } from "core/models/FileTemplate";
@@ -109,8 +109,9 @@ export default function FileTemplatePage(
                 trigger={["click"]}
               >
                 <Button
-                  type="outline-primary"
-                  className="btn--lg m-r--xs"
+                  type="secondary"
+                  className="m-r--xs"
+                  size="lg"
                   icon={<ChevronDown size={16} />}
                   onClick={(event) => {
                     event.preventDefault();
@@ -120,24 +121,27 @@ export default function FileTemplatePage(
                 </Button>
               </Dropdown>
               <Button
-                type="outline-primary"
-                className="btn--lg m-r--xs"
+                type="secondary"
+                className="m-r--xs"
+                size="lg"
                 icon={<View size={16} />}
                 onClick={handlePreviewFileTemplate}
               >
                 {translate("fileTemplates.preview")}
               </Button>
               <Button
-                type="outline-primary"
-                className="btn--lg m-r--xs"
+                type="secondary"
+                className="m-r--xs"
+                size="lg"
                 icon={<DocumentDownload size={16} />}
                 onClick={handleDownloadFileTemplate}
               >
                 {translate("fileTemplates.downloadPDF")}
               </Button>
               <Button
-                type="outline-primary"
-                className="btn--lg m-r--xs"
+                type="secondary"
+                className="m-r--xs"
+                size="lg"
                 icon={<Download size={16} />}
                 onClick={handleDownloadFileTemplateOriginal}
               >
@@ -146,7 +150,7 @@ export default function FileTemplatePage(
               {saveFileTemplate && (
                 <Button
                   type="primary"
-                  className="btn--lg"
+                  size="lg"
                   onClick={handleSaveFileTemplate}
                 >
                   {translate("fileTemplates.save")}

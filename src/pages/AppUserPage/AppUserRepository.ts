@@ -10,7 +10,7 @@ import { Status, StatusFilter } from "models/Status";
 import { AdminType, AdminTypeFilter } from "models/AdminType";
 import { Gender, GenderFilter } from "models/Gender";
 import { KeyType } from "core/services/service-types";
-import type { FileModel } from "react-3layer-ui-components/dist/esm/types/components/UploadFile/UploadFile";
+import type { FileModel } from "react-components-design-system/dist/esm/types/components/UploadFile/UploadFile";
 
 export const API_APP_USER_PREFIX = "rpc/portal/app-user";
 

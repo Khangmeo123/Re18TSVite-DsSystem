@@ -12,7 +12,7 @@ import {
   FormItem,
   InputText,
   NUMBER_BUTTON,
-} from "react-3layer-ui-components";
+} from "react-components-design-system";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 import {
   AppUserMaster,
@@ -168,10 +168,10 @@ const CreateDrawer = React.forwardRef<AppUserCreateDrawerType, unknown>(
                     onChange={handleChangeSingleField({
                       fieldName: "password",
                     })}
-                    action={{
-                      name: translate("appUsers.password.random"),
-                      action: handleRandomPassword,
-                    }}
+                    // action={{
+                    //   name: translate("appUsers.password.random"),
+                    //   action: handleRandomPassword,
+                    // }}
                     suffix={
                       <>
                         {showPassword ? (

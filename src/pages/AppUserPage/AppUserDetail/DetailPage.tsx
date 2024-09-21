@@ -17,7 +17,7 @@ import {
   OverflowMenu,
   UPLOADTYPE_IMAGE,
   UploadImage,
-} from "react-3layer-ui-components";
+} from "react-components-design-system";
 import { useDetailHook } from "./DetailHook";
 import { appUserRepository } from "../AppUserRepository";
 import { AppUserSubSystemMapping } from "models/AppUserSubSystemMapping";

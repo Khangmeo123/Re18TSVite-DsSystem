@@ -7,7 +7,7 @@ import {
   InputSearch,
   OverflowMenu,
   Tag,
-} from "react-3layer-ui-components";
+} from "react-components-design-system";
 import MasterAdvanceFilter from "./MasterAdvanceFilter";
 import { Add, Filter, Settings } from "@carbon/icons-react";
 import classNames from "classnames";
@@ -117,11 +117,7 @@ const MasterActionBar = () => {
             <Filter size={16} />
           </button>
         </Dropdown>
-        <Button
-          type="icon-only-ghost"
-          icon={<Settings size={16} />}
-          className="btn--xl"
-        />
+        <Button type="icon-ghost" icon={<Settings size={16} />} size="lg" />
         <OverflowMenu size="xl" list={listActions}></OverflowMenu>
         <Button
           type="primary"

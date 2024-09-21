@@ -17,7 +17,7 @@ import {
   FormItem,
   InputText,
   Checkbox,
-} from "react-3layer-ui-components";
+} from "react-components-design-system";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 import { finalize } from "rxjs";
 import { GeneralActionEnum } from "core/services/service-types";
@@ -245,10 +245,10 @@ const EditPage = (props: EditPageProps) => {
                   onChange={handleChangeSingleField({
                     fieldName: "password",
                   })}
-                  action={{
-                    name: translate("appUsers.password.random"),
-                    action: handleRandomPassword,
-                  }}
+                  // action={{
+                  //   name: translate("appUsers.password.random"),
+                  //   action: handleRandomPassword,
+                  // }}
                   typeInput={showPassword ? "text" : "password"}
                   suffix={
                     <>
@@ -306,7 +306,7 @@ const EditPage = (props: EditPageProps) => {
         <div className="d-flex justify-content-end">
           <Button
             type="secondary"
-            className="btn--lg"
+            size="lg"
             icon={<Close size={16} />}
             onClick={handleClose}
           >
@@ -314,7 +314,7 @@ const EditPage = (props: EditPageProps) => {
           </Button>
           <Button
             type="primary"
-            className="btn--lg"
+            size="lg"
             icon={<Save size={16} />}
             onClick={handleSave}
             loading={showLoading}

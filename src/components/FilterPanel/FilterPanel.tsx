@@ -1,6 +1,6 @@
 import { Row } from "antd";
 import React, { ReactNode } from "react";
-import { Button } from "react-3layer-ui-components";
+import { Button } from "react-components-design-system";
 import "./FilterPanel.scss";
 import Left from "./Left";
 import Right from "./Right";
@@ -71,7 +71,8 @@ const FilterPanel = (props: FilterPanelProps) => {
         <Row className="p-t--lg filter-panel__actions d-flex align-items-center justify-content-end">
           <Button
             type="secondary"
-            className="btn--xl btn-reset-filter"
+            className="btn-reset-filter"
+            size="lg"
             onClick={handleResetFilter}
           >
             <span>
@@ -81,7 +82,8 @@ const FilterPanel = (props: FilterPanelProps) => {
 
           <Button
             type="primary"
-            className="btn--xl btn-apply-filter"
+            className="btn-apply-filter"
+            size="lg"
             onClick={handleAppplyFilter}
           >
             <span>{titleButtonApply ? titleButtonApply : "Apply Filters"}</span>

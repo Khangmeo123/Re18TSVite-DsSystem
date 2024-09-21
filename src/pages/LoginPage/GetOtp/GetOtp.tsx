@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight, Loop } from "@carbon/icons-react";
 import { Divider } from "antd";
 import type { TFunction } from "i18next";
-import { Button, FormItem } from "react-3layer-ui-components";
+import { Button, FormItem } from "react-components-design-system";
 import InputTextLogin from "../InputTextLogin/InputTextLogin";
 import React from "react";
 import { authenticationRepository } from "core/repositories/AuthenticationRepository";

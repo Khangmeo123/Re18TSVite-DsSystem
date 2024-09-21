@@ -6,7 +6,7 @@ import { AppUser } from "models/AppUser";
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
-import { StatusLine } from "react-3layer-ui-components";
+import { StatusLine } from "react-components-design-system";
 
 interface ViewPageProps {
   appUser?: AppUser;
