@@ -19,6 +19,7 @@ import Profile from "./Profile/Profile";
 import { useAppSelector } from "rtk/hook";
 import ChangePasswordDrawer from "./Profile/ChangePasswordDrawer/ChangePasswordDrawer";
 import { PORTAL_APP_CATALOG_ROUTE } from "config/route-const";
+import msbLogo from "../../assets/images/msb-logo.png";
 
 interface HeaderProps {
   isShowNav?: boolean;
@@ -76,7 +77,8 @@ const Header: FC<HeaderProps> = (props: HeaderProps) => {
             </button>
             <div className="header-logo">
               <Link to={linkLogo} className="header-logo__link">
-                <span className="header-logo__icon">{logo}</span>
+                {/* <span className="header-logo__icon">{logo}</span> */}
+                <img src={msbLogo} alt="logo" />
                 <span className="header-logo__title">{logoName}</span>
               </Link>
             </div>

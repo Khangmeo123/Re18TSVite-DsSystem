@@ -3,9 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // background-color: var(--theme-color);
-  background-color: var(--color-navbar);
-  color: var(--theme-text-color);
+  color: var(--palette-base-neutral-10);
+  background-color: white;
   position: fixed;
   left: 0;
   top: 0;
@@ -16,6 +15,7 @@
   .header-action {
     display: flex;
     align-items: center;
+    background-color: white;
   }
 
   a {
@@ -38,18 +38,15 @@
     padding: 14px;
     width: 48px;
     height: 47px;
-    // background-color: var(--theme-color);
-    background-color: var(--color-navbar);
-    color: var(--theme-text-color);
+    color: var(--palette-base-neutral-10);
     border: none;
 
     &:visited {
-      color: var(--theme-text-color);
+      color: var(--palette-base-neutral-10);
     }
 
     &:hover {
-      // background-color: var(--color-secondary);
-      background-color: var(--color-navbar-hover);
+      color: var(--color-navbar-hover);
     }
 
     &:active {
@@ -86,7 +83,6 @@
           display: flex;
           flex-direction: row;
           align-items: flex-start;
-          padding: 0px 16px 0px 0px;
           gap: 8px;
           height: 24px;
           // background: var(--palette-gray-100);
@@ -94,7 +90,12 @@
           box-shadow: inset -2px 0px 0px var(color-navbar-underline-boxshadow);
 
           .header-logo__title {
-            color: #ffffff;
+            color: var(--palette-base-neutral-10);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 24px;
+            letter-spacing: 0.1599999964237213px;
+            text-align: center;
           }
 
           .header-logo__icon {
@@ -118,10 +119,14 @@
     padding: 14px;
     width: 48px;
     height: 47px;
-    // background-color: var(--theme-color);
-    background-color: var(--color-navbar);
     color: var(--color-white);
     border: none;
+
+    svg {
+      path {
+        fill: var(--palette-base-neutral-10);
+      }
+    }
 
     &.header-box__btn-noti,
     &.header-box__btn-profile {
@@ -137,8 +142,13 @@
     }
 
     &:hover {
-      // background-color: var(--color-secondary);
-      background-color: var(--color-navbar-hover);
+      color: var(--color-navbar-hover);
+
+      svg {
+        path {
+          fill: var(--color-navbar-hover);
+        }
+      }
     }
 
     &:active,
