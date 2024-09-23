@@ -41,7 +41,7 @@ const AppUserMasterActionBar = () => {
   } = importExportService.useImport(handleResetList);
 
   const handleOpenDrawer = React.useCallback(() => {
-    drawerCreateRef.current.handleOpen();
+    console.log("hihi");
   }, [drawerCreateRef]);
 
   const { run } = useDebounceFn(

@@ -12,6 +12,8 @@ import MasterTable from "./AppUserMasterTable";
 import ChangePasswordDrawer from "../AppUserDrawer/ChangePasswordDrawer";
 import { APP_OVERVIEW } from "config/route-const";
 import AppUserDetailDrawer from "../AppUserDrawer/AppUserDetailDrawer";
+import { Button } from "react-components-design-system";
+import CaretDown from "../../../assets/images/CaretDown.png";
 
 const AppUserMasterPage = () => {
   const { translate, ...contextValue } = useAppUserMasterHook();
@@ -21,14 +23,32 @@ const AppUserMasterPage = () => {
       <AppUserMasterContext.Provider value={contextValue}>
         <div className="page-content">
           <PageHeader
-            title={translate("appUsers.master.title")}
+            title={translate("Danh sách yêu cầu ngân sách")} //Chỗ này phải dùng đa ngôn ngữ, fix tạm tiếng việt
             breadcrumbs={[
               {
-                name: translate("appUsers.master.breadcrumb1"),
+                name: translate("Trang chủ"),
+                path: APP_OVERVIEW,
+              },
+              {
+                name: translate("Ngân sách"),
                 path: APP_OVERVIEW,
               },
             ]}
-          />
+          >
+            <>
+              <Button
+                icon={<img src={CaretDown} alt="img" />}
+                iconPlace="right"
+                type="primary"
+                size="lg"
+                onClick={() => {
+                  console.log("hihi");
+                }}
+              >
+                Thêm mới
+              </Button>
+            </>
+          </PageHeader>
           <LayoutMaster>
             <LayoutMasterTitle
               title={translate("appUsers.master.subTitle")}
