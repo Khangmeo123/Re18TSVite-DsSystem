@@ -40,7 +40,7 @@
             font-weight: 700;
           }
 
-          box-shadow: inset 0 -3px 0 var(--color-navbar-underline-boxshadow);
+          box-shadow: inset 0 -2px 0 var(--color-navbar-underline-boxshadow);
         }
 
         .navbar-dropdown__toggle {
@@ -54,7 +54,7 @@
           height: 48px;
 
           &.active {
-            box-shadow: inset 0 -3px 0 var(--color-navbar-underline-boxshadow);
+            box-shadow: inset 0 -2px 0 var(--color-navbar-underline-boxshadow);
           }
         }
 
