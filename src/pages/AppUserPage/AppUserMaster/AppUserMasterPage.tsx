@@ -9,14 +9,32 @@ import {
 import LayoutMasterContent from "components/LayoutMaster/LayoutMasterContent";
 import MasterActionBar from "./AppUserMasterActionBar";
 import MasterTable from "./AppUserMasterTable";
-import ChangePasswordDrawer from "../AppUserDrawer/ChangePasswordDrawer";
+// import ChangePasswordDrawer from "../AppUserDrawer/ChangePasswordDrawer";
+import type { TabsProps } from "react-components-design-system/dist/esm/types/components/Tabs/Tabs";
 import { APP_OVERVIEW } from "config/route-const";
-import AppUserDetailDrawer from "../AppUserDrawer/AppUserDetailDrawer";
-import { Button } from "react-components-design-system";
+// import AppUserDetailDrawer from "../AppUserDrawer/AppUserDetailDrawer";
+import { Button, Tabs } from "react-components-design-system";
 import CaretDown from "../../../assets/images/CaretDown.png";
+import React from "react";
+import { RepoState } from "core/services/page-services/master-service";
 
 const AppUserMasterPage = () => {
-  const { translate, ...contextValue } = useAppUserMasterHook();
+  const { translate, tabRepositories, handleChangeTab, ...contextValue } =
+    useAppUserMasterHook();
+
+  const tabItems: TabsProps["items"] = React.useMemo<TabsProps["items"]>(() => {
+    return (
+      tabRepositories &&
+      tabRepositories.length > 0 &&
+      tabRepositories.map((tab: RepoState) => {
+        return {
+          label: tab.tabTitle,
+          key: tab.tabKey,
+          children: <>hihii</>,
+        };
+      })
+    );
+  }, [tabRepositories]);
 
   return (
     <>
@@ -34,6 +52,7 @@ const AppUserMasterPage = () => {
                 path: APP_OVERVIEW,
               },
             ]}
+            hasTabs={true}
           >
             <>
               <Button
@@ -41,15 +60,23 @@ const AppUserMasterPage = () => {
                 iconPlace="right"
                 type="primary"
                 size="lg"
-                onClick={() => {
-                  console.log("hihi");
-                }}
               >
                 Thêm mới
               </Button>
             </>
           </PageHeader>
-          <LayoutMaster>
+          <div className="tab__master">
+            <Tabs
+              tabPosition="top"
+              mode="line"
+              onTabClick={handleChangeTab}
+              activeKey={contextValue.repo.tabKey}
+              items={tabItems}
+              destroyInactiveTabPane={true}
+            />
+          </div>
+
+          {/* <LayoutMaster>
             <LayoutMasterTitle
               title={translate("appUsers.master.subTitle")}
               description={translate("appUsers.master.subTitleDescription")}
@@ -62,10 +89,8 @@ const AppUserMasterPage = () => {
             <LayoutMasterContent>
               <MasterTable />
             </LayoutMasterContent>
-          </LayoutMaster>
+          </LayoutMaster> */}
         </div>
-        <AppUserDetailDrawer ref={contextValue.drawerCreateRef} />
-        <ChangePasswordDrawer ref={contextValue.drawerChangePasswordRef} />
       </AppUserMasterContext.Provider>
     </>
   );

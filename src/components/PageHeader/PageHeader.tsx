@@ -14,16 +14,17 @@ export interface PageHeaderProps {
   children?: ReactNode;
   className?: string;
   theme?: "dark" | "light";
+  hasTabs?: boolean;
 }
 
 const PageHeader = (props: PageHeaderProps) => {
-  const { title, breadcrumbs, theme, children } = props;
+  const { title, breadcrumbs, theme, children, hasTabs } = props;
 
   return (
     <div
       className={classNames(
         "page-header",
-        { "page-header--dark": theme === "dark" },
+        { "page-header--dark": theme === "dark", "has-tabs": hasTabs },
         props.className
       )}
     >

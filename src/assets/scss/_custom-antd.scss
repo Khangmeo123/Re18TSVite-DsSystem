@@ -398,3 +398,16 @@ tr
   border-right: none;
   background-color: var(--palette-gray-10);
 }
+.tab__master {
+  z-index: 100;
+  position: fixed;
+  .tabs__container .ant-tabs {
+    .ant-tabs-tab {
+      box-shadow: unset !important;
+      height: 44px !important;
+    }
+    .ant-tabs-ink-bar {
+      background-color: unset;
+    }
+  }
+}

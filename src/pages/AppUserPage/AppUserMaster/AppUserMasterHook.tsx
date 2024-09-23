@@ -8,6 +8,10 @@ import { useTranslation } from "react-i18next";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 import type { AppUserChangePasswordDrawerType } from "../AppUserDrawer/ChangePasswordDrawer";
 import type { AppUserCreateDrawerType } from "../AppUserDrawer/AppUserDetailDrawer";
+import {
+  masterService,
+  RepoState,
+} from "core/services/page-services/master-service";
 
 export interface AppUserMaster {
   modelFilter: AppUserFilter;
@@ -52,12 +56,40 @@ export function useAppUserMasterHook() {
       take: 10,
     };
   }, []);
+  const tabRepositories = React.useMemo<RepoState[]>(() => {
+    return [
+      {
+        tabKey: "all",
+        tabTitle: translate("appUser.tab.all"),
+        list: appUserRepository.listAll,
+        count: appUserRepository.countAll,
+      },
+      {
+        tabKey: "owned",
+        tabTitle: translate("appUser.tab.owned"),
+        list: appUserRepository.listOwned,
+        count: appUserRepository.countOwned,
+      },
+      {
+        tabKey: "approved",
+        tabTitle: translate("appUser.tab.approval"),
+        list: appUserRepository.listApproval,
+        count: appUserRepository.countApproval,
+      },
+    ];
+  }, [translate]);
 
-  const [modelFilter, dispatch, countFilter, getModelFilter] =
+  const [modelFilter, dispatchFilter, countFilter, getModelFilter] =
     queryStringService.useQueryString(AppUserFilter, baseFilter, [
       "orderBy",
       "orderType",
+      "tabKey",
     ]);
+
+  const { repo, handleChangeTab } = masterService.useTabRepository(
+    tabRepositories,
+    dispatchFilter
+  );
 
   const drawerCreateRef = createRef<AppUserCreateDrawerType>();
 
@@ -68,7 +100,7 @@ export function useAppUserMasterHook() {
       appUserRepository.list,
       appUserRepository.count,
       baseFilter,
-      dispatch,
+      dispatchFilter,
       getModelFilter
     );
 
@@ -80,8 +112,8 @@ export function useAppUserMasterHook() {
   }, [handleLoadList]);
 
   return {
-    translate,
-    dispatchFilter: dispatch,
+    // context value:
+    dispatchFilter,
     modelFilter,
     countFilter,
     list,
@@ -95,5 +127,11 @@ export function useAppUserMasterHook() {
     rowSelection,
     selectedRowKeys,
     setSelectedRowKeys,
+    repo,
+
+    // non-context value:
+    translate,
+    handleChangeTab,
+    tabRepositories,
   };
 }

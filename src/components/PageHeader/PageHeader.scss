@@ -45,6 +45,10 @@
   display: flex;
   justify-content: space-between;
 
+  &.has-tabs {
+    height: 124px !important;
+  }
+
   .button-place {
     margin-top: 16px;
     margin-right: 16px;
