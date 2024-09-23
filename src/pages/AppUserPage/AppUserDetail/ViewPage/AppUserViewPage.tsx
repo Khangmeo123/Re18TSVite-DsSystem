@@ -8,12 +8,12 @@ import { useTranslation } from "react-i18next";
 import { useHistory } from "react-router-dom";
 import { StatusLine } from "react-components-design-system";
 
-interface ViewPageProps {
+interface AppUserViewPageProps {
   appUser?: AppUser;
   isEditable?: boolean;
 }
 
-const ViewPage = (props: ViewPageProps) => {
+const AppUserViewPage = (props: AppUserViewPageProps) => {
   const [translate] = useTranslation();
   const { appUser, isEditable } = props;
   const history = useHistory();
@@ -187,4 +187,4 @@ const ViewPage = (props: ViewPageProps) => {
   );
 };
 
-export default ViewPage;
+export default AppUserViewPage;

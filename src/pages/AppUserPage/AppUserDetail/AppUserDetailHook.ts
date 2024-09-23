@@ -19,7 +19,7 @@ import type { FileModel } from "react-components-design-system/dist/esm/types/co
 import { APP_USER_ADMIN_TYPE_MASTER_ROUTE } from "config/route-const";
 import { AppUserSubSystemMapping } from "models/AppUserSubSystemMapping";
 
-export function useDetailHook() {
+export function useAppUserDetailHook() {
   const [translate] = useTranslation();
   const { path } = useRouteMatch();
   const history = useHistory();

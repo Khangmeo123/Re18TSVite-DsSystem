@@ -8,16 +8,16 @@ import {
   OverflowMenu,
   Tag,
 } from "react-components-design-system";
-import MasterAdvanceFilter from "./MasterAdvanceFilter";
+import MasterAdvanceFilter from "./AppUserMasterAdvanceFilter";
 import { Add, Filter, Settings } from "@carbon/icons-react";
 import classNames from "classnames";
 import { FilterActionEnum } from "core/services/service-types";
 import { importExportService } from "core/services/page-services/import-export-service";
 import { useDebounceFn } from "ahooks";
-import { AppUserMaster, AppUserMasterContext } from "./MasterHook";
+import { AppUserMaster, AppUserMasterContext } from "./AppUserMasterHook";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 
-const MasterActionBar = () => {
+const AppUserMasterActionBar = () => {
   const appUserMaster = useContext<AppUserMaster>(AppUserMasterContext);
   const {
     modelFilter,
@@ -141,4 +141,4 @@ const MasterActionBar = () => {
   );
 };
 
-export default MasterActionBar;
+export default AppUserMasterActionBar;

@@ -1,5 +1,5 @@
 import PageHeader from "components/PageHeader/PageHeader";
-import "./DetailPage.scss";
+import "./AppUserDetailPage.scss";
 import LayoutDetail from "components/LayoutDetail/LayoutDetail";
 import { Col, Row, Switch as SwitchAntd } from "antd";
 import { Redirect, Route, Switch } from "react-router-dom";
@@ -9,8 +9,8 @@ import {
   APP_USER_MASTER_ROUTE,
   APP_USER_VIEW_ROUTE,
 } from "config/route-const";
-import EditPage from "./EditPage/EditPage";
-import ViewPage from "./ViewPage/ViewPage";
+import AppUserEditPage from "./EditPage/AppUserEditPage";
+import AppUserViewPage from "./ViewPage/AppUserViewPage";
 import Alert from "components/Alert/Alert";
 import { ArrowRight, Camera } from "@carbon/icons-react";
 import {
@@ -18,11 +18,11 @@ import {
   UPLOADTYPE_IMAGE,
   UploadImage,
 } from "react-components-design-system";
-import { useDetailHook } from "./DetailHook";
+import { useAppUserDetailHook } from "./AppUserDetailHook";
 import { appUserRepository } from "../AppUserRepository";
 import { AppUserSubSystemMapping } from "models/AppUserSubSystemMapping";
 
-const AppUserDetail = () => {
+const AppUserDetailPage = () => {
   const {
     translate,
     path,
@@ -34,7 +34,7 @@ const AppUserDetail = () => {
     isEditable,
     handleUpdateAvatar,
     handleGoAppUserTypeAdmin,
-  } = useDetailHook();
+  } = useAppUserDetailHook();
 
   return (
     <div className="page-detail__app-user">
@@ -120,10 +120,10 @@ const AppUserDetail = () => {
           <Col span={17}>
             <Switch>
               <Route path={APP_USER_EDIT_ROUTE}>
-                <EditPage appUser={appUser} updateAppUser={setAppUser} />
+                <AppUserEditPage appUser={appUser} updateAppUser={setAppUser} />
               </Route>
               <Route path={APP_USER_VIEW_ROUTE}>
-                <ViewPage appUser={appUser} isEditable={isEditable} />
+                <AppUserViewPage appUser={appUser} isEditable={isEditable} />
               </Route>
               <Route exact path={path}>
                 <Redirect to={APP_USER_VIEW_ROUTE} />
@@ -136,4 +136,4 @@ const AppUserDetail = () => {
   );
 };
 
-export default AppUserDetail;
+export default AppUserDetailPage;

@@ -1,7 +1,7 @@
 import { ProtectedRoute } from "core/pages/Authentication/ProtectedRoute";
 import { Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
-import AppUserMaster from "./AppUserMaster/MasterPage";
-import AppUserDetail from "./AppUserDetail/DetailPage";
+import AppUserMasterPage from "./AppUserMaster/AppUserMasterPage";
+import AppUserDetailPage from "./AppUserDetail/AppUserDetailPage";
 import {
   APP_USER_DETAIL_ROUTE,
   APP_USER_MASTER_ROUTE,
@@ -20,13 +20,13 @@ function AppUserPage() {
         <ProtectedRoute
           path={APP_USER_MASTER_ROUTE}
           key={APP_USER_MASTER_ROUTE}
-          component={AppUserMaster}
+          component={AppUserMasterPage}
           auth={true}
         />
         <ProtectedRoute
           path={APP_USER_DETAIL_ROUTE}
           key={APP_USER_DETAIL_ROUTE}
-          component={AppUserDetail}
+          component={AppUserDetailPage}
           auth={true}
         />
         <Route exact path={path}>
@@ -37,5 +37,5 @@ function AppUserPage() {
   );
 }
 
-export { AppUserMaster, AppUserDetail };
+export { AppUserMasterPage, AppUserDetailPage };
 export default AppUserPage;

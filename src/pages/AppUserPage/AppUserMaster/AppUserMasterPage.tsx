@@ -2,16 +2,19 @@ import LayoutMaster from "components/LayoutMaster/LayoutMaster";
 import LayoutMasterActions from "components/LayoutMaster/LayoutMasterActions";
 import LayoutMasterTitle from "components/LayoutMaster/LayoutMasterTitle";
 import PageHeader from "components/PageHeader/PageHeader";
-import { AppUserMasterContext, useMasterHook } from "./MasterHook";
+import {
+  AppUserMasterContext,
+  useAppUserMasterHook,
+} from "./AppUserMasterHook";
 import LayoutMasterContent from "components/LayoutMaster/LayoutMasterContent";
-import MasterActionBar from "./MasterActionBar";
-import MasterTable from "./MasterTable";
-import CreateDrawer from "../AppUserDrawer/CreateDrawer";
+import MasterActionBar from "./AppUserMasterActionBar";
+import MasterTable from "./AppUserMasterTable";
 import ChangePasswordDrawer from "../AppUserDrawer/ChangePasswordDrawer";
 import { APP_OVERVIEW } from "config/route-const";
+import AppUserDetailDrawer from "../AppUserDrawer/AppUserDetailDrawer";
 
-const AppUserMaster = () => {
-  const { translate, ...contextValue } = useMasterHook();
+const AppUserMasterPage = () => {
+  const { translate, ...contextValue } = useAppUserMasterHook();
 
   return (
     <>
@@ -41,11 +44,11 @@ const AppUserMaster = () => {
             </LayoutMasterContent>
           </LayoutMaster>
         </div>
-        <CreateDrawer ref={contextValue.drawerCreateRef} />
+        <AppUserDetailDrawer ref={contextValue.drawerCreateRef} />
         <ChangePasswordDrawer ref={contextValue.drawerChangePasswordRef} />
       </AppUserMasterContext.Provider>
     </>
   );
 };
 
-export default AppUserMaster;
+export default AppUserMasterPage;

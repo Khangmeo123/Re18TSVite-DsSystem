@@ -13,7 +13,7 @@ import type { KeyType } from "core/services/service-types";
 import {
   AppUserMaster,
   AppUserMasterContext,
-} from "../AppUserMaster/MasterHook";
+} from "../AppUserMaster/AppUserMasterHook";
 
 export interface AppUserChangePasswordDrawerType {
   handleOpen: (appUser?: AppUser | KeyType[]) => void;

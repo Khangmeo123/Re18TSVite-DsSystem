@@ -17,14 +17,14 @@ import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 import {
   AppUserMaster,
   AppUserMasterContext,
-} from "../AppUserMaster/MasterHook";
+} from "../AppUserMaster/AppUserMasterHook";
 
 export interface AppUserCreateDrawerType {
   handleOpen: () => void;
 }
 
-const CreateDrawer = React.forwardRef<AppUserCreateDrawerType, unknown>(
-  function CreateDrawer(props, ref) {
+const AppUserDetailDrawer = React.forwardRef<AppUserCreateDrawerType, unknown>(
+  function AppUserDetailDrawer(props, ref) {
     const [translate] = useTranslation();
     const history = useHistory();
     const appUserMaster = useContext<AppUserMaster>(AppUserMasterContext);
@@ -209,4 +209,4 @@ const CreateDrawer = React.forwardRef<AppUserCreateDrawerType, unknown>(
   }
 );
 
-export default CreateDrawer;
+export default AppUserDetailDrawer;

@@ -22,12 +22,12 @@ import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 import { finalize } from "rxjs";
 import { GeneralActionEnum } from "core/services/service-types";
 
-interface EditPageProps {
+interface AppUserEditPageProps {
   appUser?: AppUser;
   updateAppUser?: (appUser: AppUser) => void;
 }
 
-const EditPage = (props: EditPageProps) => {
+const AppUserEditPage = (props: AppUserEditPageProps) => {
   const { appUser, updateAppUser } = props;
   const [translate] = useTranslation();
   const { model, dispatch, getModel } = detailService.useModel(
@@ -327,4 +327,4 @@ const EditPage = (props: EditPageProps) => {
   );
 };
 
-export default EditPage;
+export default AppUserEditPage;

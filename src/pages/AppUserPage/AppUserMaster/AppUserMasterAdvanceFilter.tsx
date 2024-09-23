@@ -12,14 +12,14 @@ import {
 } from "react-components-design-system";
 import { Search } from "@carbon/icons-react";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
-import { AppUserMaster, AppUserMasterContext } from "./MasterHook";
+import { AppUserMaster, AppUserMasterContext } from "./AppUserMasterHook";
 import { FilterActionEnum } from "core/services/service-types";
 
-interface MasterAdvanceFilterProps {
+interface AppUserMasterAdvanceFilterProps {
   setVisible?: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const MasterAdvanceFilter = (props: MasterAdvanceFilterProps) => {
+const AppUserMasterAdvanceFilter = (props: AppUserMasterAdvanceFilterProps) => {
   const appUserMaster = useContext<AppUserMaster>(AppUserMasterContext);
   const {
     modelFilter: filter,
@@ -209,4 +209,4 @@ const MasterAdvanceFilter = (props: MasterAdvanceFilterProps) => {
   );
 };
 
-export default MasterAdvanceFilter;
+export default AppUserMasterAdvanceFilter;

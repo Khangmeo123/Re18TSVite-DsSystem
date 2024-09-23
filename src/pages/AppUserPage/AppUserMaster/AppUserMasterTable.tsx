@@ -42,9 +42,9 @@ import type { ListOverflowMenu } from "react-components-design-system/dist/esm/t
 import { useTranslation } from "react-i18next";
 import { useAppSelector } from "rtk/hook";
 import type { AppUserChangePasswordDrawerType } from "../AppUserDrawer/ChangePasswordDrawer";
-import { AppUserMaster, AppUserMasterContext } from "./MasterHook";
+import { AppUserMaster, AppUserMasterContext } from "./AppUserMasterHook";
 
-export interface MasterTableProps {
+export interface AppUserMasterTableProps {
   filter?: AppUserFilter;
   updateFilter?: React.Dispatch<FilterAction<AppUserFilter>>;
   drawerChangePasswordRef?: React.RefObject<AppUserChangePasswordDrawerType>;
@@ -55,7 +55,7 @@ export interface MasterTableProps {
   handleLoadList?: (filter?: AppUserFilter) => void;
 }
 
-const MasterTable = () => {
+const AppUserMasterTable = () => {
   const appUserMaster = useContext<AppUserMaster>(AppUserMasterContext);
   const {
     drawerChangePasswordRef,
@@ -664,4 +664,4 @@ const MasterTable = () => {
   );
 };
 
-export default MasterTable;
+export default AppUserMasterTable;

@@ -7,7 +7,7 @@ import React, { createContext, createRef } from "react";
 import { useTranslation } from "react-i18next";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 import type { AppUserChangePasswordDrawerType } from "../AppUserDrawer/ChangePasswordDrawer";
-import type { AppUserCreateDrawerType } from "../AppUserDrawer/CreateDrawer";
+import type { AppUserCreateDrawerType } from "../AppUserDrawer/AppUserDetailDrawer";
 
 export interface AppUserMaster {
   modelFilter: AppUserFilter;
@@ -43,7 +43,7 @@ export const AppUserMasterContext = createContext<AppUserMaster>({
   canBulkAction: false,
 });
 
-export function useMasterHook() {
+export function useAppUserMasterHook() {
   const [translate] = useTranslation();
   const baseFilter = React.useMemo(() => {
     return {
