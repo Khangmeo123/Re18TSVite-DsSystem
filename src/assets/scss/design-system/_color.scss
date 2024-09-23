@@ -1,4 +1,62 @@
-$palettes: (
+$colors: (
+  base: (
+    neutral-10: #0c2042,
+    neutral-9: #253858,
+    neutral-8: #42526e,
+    neutral-7: #5e6c84,
+    neutral-6: #7a869a,
+    neutral-5: #97a0af,
+    neutral-4: #b3bac5,
+    neutral-3: #dfe1e6,
+    neutral-2: #f4f5f7,
+    neutral-1: #fafbfc,
+    neutral-black: #070708,
+    neutral-white: #ffffff,
+
+    opacity-40: #10182866,
+    opacity-80: #101828cc,
+
+    blue-1: #e6f2fb,
+    blue-2: #b2d7f4,
+    blue-3: #59a9e6,
+    blue-4: #3998e1,
+    blue-5: #077eda,
+    blue-6: #0673c6,
+    blue-7: #05599b,
+
+    green-1: #e9f6ed,
+    green-2: #9ad4ab,
+    green-3: #6cc084,
+    green-4: #50b46d,
+    green-5: #24a148,
+    green-6: #219342,
+    green-7: #367e4b,
+
+    orange-1: #fef4e6,
+    orange-2: #fdddb3,
+    orange-3: #fab55a,
+    orange-4: #f9a63a,
+    orange-5: #f79009,
+    orange-6: #e18308,
+    orange-7: #af6606,
+
+    red-1: #feeceb,
+    red-2: #f8a9a3,
+    red-3: #f5827a,
+    red-4: #f36960,
+    red-5: #f04438,
+    red-6: #da3e33,
+    red-7: #aa3028,
+  ),
+  brand: (
+    1: #fdeee3,
+    2: #ffd4bc,
+    3: #fea97f,
+    4: #f3693f,
+    5: #fd8c59,
+    6: #dd502e,
+    7: #c03629,
+  ),
   red: (
     100: #2d0709,
     90: #520408,
@@ -303,12 +361,13 @@ $palettes: (
 
 :root {
   /* color palettes */
-  @each $colorname, $palette in $palettes {
+  @each $colorname, $palette in $colors {
     @each $key, $value in $palette {
       $keyname: "--palette-" + $colorname + "-" + $key;
       #{$keyname}: #{$value};
     }
   }
+
   /* nav-bar colors */
   --color-navbar: #eb6200;
   --color-navbar-hover: #cc5500;
@@ -328,8 +387,26 @@ $palettes: (
   --color-primary-hover: #cc5500;
   --color-primary-active: #753300;
   --color-primary-blur: #ffd9be;
+  --color-primary-pressed: #fdba89;
+  --color-bg-button-disable: #e7e3df;
+  --color-primary-icon-blur: #b65007;
 
-  --color-secondary: #393939;
+  --color-text-hint: #8c9093;
+  --color-text-disable: #7a869a;
+  --color-icon-disable: #97a0af;
+  /* main colors */
+  /* used for the links, the button background color,... */
+  // --color-primary: #315efb;
+  // --color-primary-hover: #0830bc;
+  // --color-primary-active: #0830bc;
+  // --color-primary-blur: #ABBDFD;
+  // --color-primary-pressed: #88a2fd;
+  // --color-bg-button-disable: #DFE1e6;
+  // --color-primary-icon-blur: #065EB7;
+
+  --color-text-tertiary: #42526e;
+
+  --color-secondary: #b3bac5;
   --color-secondary-hover: #4c4c4c;
   --color-secondary-active: #6f6f6f;
   --color-secondary-blur: #e0e0e0;
@@ -341,7 +418,7 @@ $palettes: (
   --color-accent-blur: #ffd9be;
 
   /* support color */
-  --color-link: #0043ce;
+  --color-link: #0830bc;
   --color-harmony-black: #000000;
   --color-text: #161616;
   --color-black-hover: #212121;
@@ -349,128 +426,14 @@ $palettes: (
   --color-white-hover: #e8e8e8;
 
   /* critical color */
-  --color-critical: #da1e28;
-  --color-critical-hover: #b81922;
-  --color-critilcal-active: #750e13;
-  --color-critical-blur: #fff1f1;
-
-  --white: #ffffff;
-  --label--disable: #a8a8a8;
-  /* buttons primary */
-  --btn-primary-bg: var(--color-primary);
-  --btn-primary-hover: var(--color-primary-hover);
-  --btn-primary-active: var(--color-primary-active);
-  --btn-primary-focus: var(--color-primary);
-  --btn-primary-label: var(--white);
-  --btn-primary-disabled: #f4f4f4;
-  --btn-primary-disabled-label: var(--label--disable);
-
-  /* buttons primary outline */
-  --btn-outline-primary-border: var(--color-primary);
-  --btn-outline-primary-hover: var(--color-primary);
-  --btn-outline-primary-active: var(--color-primary);
-  --btn-outline-primary-label: var(--color-primary);
-  --btn-outline-primary-disabled-border: #c1c7cd;
-  --btn-outline-primary-disabled-label: var(--label--disable);
-
-  /* buttons secondary */
-  --btn-secondary-bg: var(--color-secondary);
-  --btn-secondary-hover: var(--color-secondary-hover);
-  --btn-secondary-active: var(--color-secondary-active);
-  --btn-secondary-focus: var(--color-secondary);
-  --btn-secondary-label: var(--white);
-  --btn-secondary-disabled: #f4f4f4;
-  --btn-secondary-disabled-label: var(--label--disable);
-
-  /* buttons ghost */
-  --color--ghost: #e8e8e8;
-  --btn-ghost-hover: var(--color--ghost);
-  --btn-ghost-active: var(--color--ghost);
-  --btn-ghost-focus: var(--color--ghost);
-  --btn-ghost-label: #161616;
-  --btn-ghost-disabled-label: var(--label--disable);
-  --btn-ghost-border-forcus: var(--color-primary);
-
-  /* buttons ghost primary */
-  --color--ghost--primary: var(--color-primary-hover);
-  --btn-ghost-primary-hover: var(--color--ghost--primary);
-  --btn-ghost-primary-active: var(--color--ghost--primary);
-  --btn-ghost-primary-focus: var(--color--ghost--primary);
-  --btn-ghost-primary-label: var(--white);
-  --btn-ghost-primary-disabled-label: var(--label--disable);
-  --btn-ghost-primary-border-forcus: var(--color--ghost--primary);
-
-  /* buttons ghost secondary */
-  --color--ghost--secondary: var(--color-secondary-hover);
-  --btn-ghost-secondary-hover: var(--color--ghost--secondary);
-  --btn-ghost-secondary-active: var(--color--ghost--secondary);
-  --btn-ghost-secondary-focus: var(--color--ghost--secondary);
-  --btn-ghost-secondary-label: var(--white);
-  --btn-ghost-secondary-disabled-label: var(--label--disable);
-  --btn-ghost-secondary-border-forcus: var(--color-primary);
-
-  /* buttons destructive */
-  --color--danger: var(--color-critical);
-  --color--danger-hover: var(--color-critical-hover);
-  --btn-danger-bg: var(--color--danger);
-  --btn-danger-hover: var(--color--danger-hover);
-  --btn-danger-active: var(--color-critilcal-active);
-  --btn-danger-focus: var(--color--danger);
-  --btn-danger-label: var(--white);
-  --btn-danger-disabled: #f4f4f4;
-  --btn-danger-disabled-label: var(--label--disable);
-
-  /* buttons destructive outline */
-  --btn-outline-danger-border: var(--color--danger);
-  --btn-outline-danger-hover: var(--color--danger);
-  --btn-outline-danger-active: var(--color--danger);
-  --btn-outline-danger-focus: var(--color--danger);
-  --btn-outline-danger-label: var(--color--danger);
-  --btn-outline-danger-disabled-border: #c1c7cd;
-  --btn-outline-danger-disabled-label: var(--label--disable);
-
-  /* buttons link-plain */
-  --color--link-plain: #e8e8e8;
-  --btn-link-plain-hover: var(--color--link-plain);
-  --btn-link-plain-active: var(--color--link-plain);
-  --btn-link-plain-focus: var(--white);
-  --btn-link-plain-label: #161616;
-  --btn-link-plain-disabled-label: var(--label--disable);
-  --btn-link-plain-border-forcus: var(--color-primary);
-
-  /* buttons link*/
-  --color--link: var(--white);
-  --btn-link-hover: var(--color--link);
-  --btn-link-active: var(--color--link);
-  --btn-link-focus: var(--white);
-  --btn-link-label: #161616;
-  --btn-link-disabled-label: var(--label--disable);
-  --btn-link-border-forcus: var(--color-primary);
-
-  /* theme color */
-  --theme-color: var(--palette-gray-100);
-  --theme-text-color: var(--color-white);
+  --color-critical: #da3e33;
+  --color-critical-hover: #aa3028;
+  --color-critical-active: #aa3028;
+  --color-critical-blur: #f8a9a3;
+  --color-critical-pressed: #f04438;
 }
 
 /* class bg and color for color $palletes with syntax .palette-$colorname-$number-$type */
-
-@each $colorname, $palette in $palettes {
-  @each $key, $value in $palette {
-    $keyname: "--palette-" + $colorname + "-" + $key;
-    .bg-palette-#{"" + $colorname}-#{$key} {
-      background-color: var(#{$keyname});
-    }
-    .color-palette-#{"" + $colorname}-#{$key} {
-      color: var(#{$keyname});
-    }
-    .bg-palette-#{"" + $colorname}-#{$key}-important {
-      background-color: var(#{$keyname}) !important;
-    }
-    .color-palette-#{"" + $colorname}-#{$key}-important {
-      color: var(#{$keyname}) !important;
-    }
-  }
-}
 
 .bg-primary {
   background-color: var(--color-primary);
@@ -488,9 +451,9 @@ $palettes: (
   color: var(--color-secondary);
 }
 
-// .bg-white {
-//   background-color: var(--white);
-// }
+.bg-white {
+  background-color: var(--white);
+}
 
 .color-white {
   color: var(--white);
