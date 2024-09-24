@@ -214,7 +214,7 @@ export const detailService = {
    * */
   useGetIsDetail<T extends Model>(
     getDetail: (id: number | string) => Observable<T>,
-    dispatch: React.Dispatch<unknown>
+    dispatch: React.Dispatch<any>
   ) {
     const { id } = queryStringService.useGetQueryString("id");
     const isDetail = useMemo(() => id !== null, [id]);

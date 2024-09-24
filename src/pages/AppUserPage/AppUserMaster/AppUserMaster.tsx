@@ -13,7 +13,7 @@ import React from "react";
 import { RepoState } from "core/services/page-services/master-service";
 import AppUserMasterTab from "./AppUserMasterTab/AppUserMasterTab";
 
-const AppUserMasterPage = () => {
+const AppUserMaster = () => {
   const { translate, tabRepositories, handleChangeTab, ...contextValue } =
     useAppUserMasterHook();
 
@@ -76,4 +76,4 @@ const AppUserMasterPage = () => {
   );
 };
 
-export default AppUserMasterPage;
+export default AppUserMaster;
