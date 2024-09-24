@@ -1,10 +1,8 @@
 import { Dropdown } from "antd";
-import { AppUserFilter } from "models/AppUser";
 import React, { useContext } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Button,
-  InputSearch,
   InputText,
   // OverflowMenu,
   Tag,

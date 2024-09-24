@@ -3,11 +3,9 @@ import { FilterAction, KeyType } from "core/services/service-types";
 import { listService } from "core/services/page-services/list-service";
 import { queryStringService } from "core/services/page-services/query-string-service";
 import { AppUser, AppUserFilter } from "models/AppUser";
-import React, { createContext, createRef } from "react";
+import React, { createContext } from "react";
 import { useTranslation } from "react-i18next";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
-import type { AppUserChangePasswordDrawerType } from "../AppUserDrawer/ChangePasswordDrawer";
-import type { AppUserCreateDrawerType } from "../AppUserDrawer/AppUserDetailDrawer";
 import {
   masterService,
   RepoState,
@@ -20,8 +18,6 @@ export interface AppUserMaster {
   loadingList: boolean;
   dispatchFilter: React.Dispatch<FilterAction<AppUserFilter>>;
   countFilter: number;
-  drawerCreateRef: React.RefObject<AppUserCreateDrawerType>;
-  drawerChangePasswordRef: React.RefObject<AppUserChangePasswordDrawerType>;
   handleLoadList: (filterParam?: AppUserFilter) => void;
   handleResetList: () => void;
   rowSelection: TableRowSelection<AppUser>;
@@ -37,8 +33,6 @@ export const AppUserMasterContext = createContext<AppUserMaster>({
   loadingList: false,
   dispatchFilter: null,
   countFilter: 0,
-  drawerCreateRef: null,
-  drawerChangePasswordRef: null,
   handleLoadList: null,
   handleResetList: null,
   rowSelection: null,
@@ -98,10 +92,6 @@ export function useAppUserMasterHook() {
     };
   }, [repo.tabKey]);
 
-  const drawerCreateRef = createRef<AppUserCreateDrawerType>();
-
-  const drawerChangePasswordRef = createRef<AppUserChangePasswordDrawerType>();
-
   const { list, count, loadingList, handleResetList, handleLoadList } =
     listService.useList<AppUser, AppUserFilter>(
       repo.list,
@@ -128,8 +118,6 @@ export function useAppUserMasterHook() {
     loadingList,
     handleResetList,
     handleLoadList,
-    drawerCreateRef,
-    drawerChangePasswordRef,
     canBulkAction,
     rowSelection,
     selectedRowKeys,

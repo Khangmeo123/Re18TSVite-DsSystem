@@ -19,7 +19,7 @@ import {
   getAntOrderType,
   tableService,
 } from "core/services/page-services/table-service";
-import { FilterAction, KeyType } from "core/services/service-types";
+import { FilterAction } from "core/services/service-types";
 import { ADMIN_TYPE, AdminType } from "models/AdminType";
 import { AppUser, AppUserFilter } from "models/AppUser";
 import { Profile } from "models/Profile";
@@ -37,13 +37,11 @@ import {
 import type { ListOverflowMenu } from "react-components-design-system/dist/esm/types/components/OverflowMenu/OverflowMenuList";
 import { useTranslation } from "react-i18next";
 import { useAppSelector } from "rtk/hook";
-import type { AppUserChangePasswordDrawerType } from "../../AppUserDrawer/ChangePasswordDrawer";
 import { AppUserMaster, AppUserMasterContext } from "../AppUserMasterHook";
 
 export interface AppUserMasterTabTableProps {
   filter?: AppUserFilter;
   updateFilter?: React.Dispatch<FilterAction<AppUserFilter>>;
-  drawerChangePasswordRef?: React.RefObject<AppUserChangePasswordDrawerType>;
   list?: AppUser[];
   count?: number;
   loadingList?: boolean;
@@ -54,7 +52,6 @@ export interface AppUserMasterTabTableProps {
 const AppUserMasterTabTable = () => {
   const appUserMaster = useContext<AppUserMaster>(AppUserMasterContext);
   const {
-    drawerChangePasswordRef,
     modelFilter,
     dispatchFilter,
     list,
@@ -372,14 +369,6 @@ const AppUserMasterTabTable = () => {
     translate,
   ]);
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleBulkChangePassword = React.useCallback(
-    (selectedRowKeys: KeyType[]) => () => {
-      drawerChangePasswordRef.current.handleOpen(selectedRowKeys);
-    },
-    [drawerChangePasswordRef]
-  );
-
   const isEditable = React.useCallback(
     (appUser: AppUser) => {
       if (profile.userId === appUser.id) {
@@ -444,13 +433,6 @@ const AppUserMasterTabTable = () => {
           isShow: true,
         },
         {
-          title: translate("appUsers.actions.changePassword"),
-          action: () => {
-            drawerChangePasswordRef.current.handleOpen(appUser);
-          },
-          isShow: true,
-        },
-        {
           title: translate("appUsers.actions.deactive"),
           action: handleDeactive(appUser),
           isShow: appUser.statusId === 1 && !isGlobalAdmin,
@@ -469,7 +451,6 @@ const AppUserMasterTabTable = () => {
       return <OverflowMenu list={list} disabled={!canEdit}></OverflowMenu>;
     },
     [
-      drawerChangePasswordRef,
       handleActive,
       handleDeactive,
       handleDelete,
