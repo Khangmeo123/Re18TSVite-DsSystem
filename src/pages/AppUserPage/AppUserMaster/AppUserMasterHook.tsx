@@ -49,13 +49,7 @@ export const AppUserMasterContext = createContext<AppUserMaster>({
 
 export function useAppUserMasterHook() {
   const [translate] = useTranslation();
-  const baseFilter = React.useMemo(() => {
-    return {
-      ...new AppUserFilter(),
-      skip: 0,
-      take: 10,
-    };
-  }, []);
+
   const tabRepositories = React.useMemo<RepoState[]>(() => {
     return [
       {
@@ -80,16 +74,29 @@ export function useAppUserMasterHook() {
   }, [translate]);
 
   const [modelFilter, dispatchFilter, countFilter, getModelFilter] =
-    queryStringService.useQueryString(AppUserFilter, baseFilter, [
-      "orderBy",
-      "orderType",
-      "tabKey",
-    ]);
+    queryStringService.useQueryString(
+      AppUserFilter,
+      {
+        ...new AppUserFilter(),
+        skip: 0,
+        take: 10,
+      },
+      ["orderBy", "orderType", "tabKey"]
+    );
 
   const { repo, handleChangeTab } = masterService.useTabRepository(
     tabRepositories,
     dispatchFilter
   );
+
+  const baseFilter = React.useMemo(() => {
+    return {
+      ...new AppUserFilter(),
+      tabKey: repo.tabKey,
+      skip: 0,
+      take: 10,
+    };
+  }, [repo.tabKey]);
 
   const drawerCreateRef = createRef<AppUserCreateDrawerType>();
 
@@ -97,8 +104,8 @@ export function useAppUserMasterHook() {
 
   const { list, count, loadingList, handleResetList, handleLoadList } =
     listService.useList<AppUser, AppUserFilter>(
-      appUserRepository.list,
-      appUserRepository.count,
+      repo.list,
+      repo.count,
       baseFilter,
       dispatchFilter,
       getModelFilter

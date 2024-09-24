@@ -40,19 +40,19 @@ export class AppUserRepository extends Repository {
 
   public listAll = (appUserFilter?: AppUserFilter): Observable<AppUser[]> => {
     return this.http
-      .post<AppUser[]>(kebabCase(nameof(this.list)), appUserFilter)
+      .post<AppUser[]>(kebabCase(nameof(this.listAll)), appUserFilter)
       .pipe(Repository.responseMapToList<AppUser>(AppUser));
   };
 
   public countOwned = (appUserFilter?: AppUserFilter): Observable<number> => {
     return this.http
-      .post<number>(kebabCase(nameof(this.count)), appUserFilter)
+      .post<number>(kebabCase(nameof(this.countOwned)), appUserFilter)
       .pipe(Repository.responseDataMapper<number>());
   };
 
   public listOwned = (appUserFilter?: AppUserFilter): Observable<AppUser[]> => {
     return this.http
-      .post<AppUser[]>(kebabCase(nameof(this.list)), appUserFilter)
+      .post<AppUser[]>(kebabCase(nameof(this.listOwned)), appUserFilter)
       .pipe(Repository.responseMapToList<AppUser>(AppUser));
   };
 
@@ -60,7 +60,7 @@ export class AppUserRepository extends Repository {
     appUserFilter?: AppUserFilter
   ): Observable<number> => {
     return this.http
-      .post<number>(kebabCase(nameof(this.count)), appUserFilter)
+      .post<number>(kebabCase(nameof(this.countApproval)), appUserFilter)
       .pipe(Repository.responseDataMapper<number>());
   };
 
@@ -68,7 +68,7 @@ export class AppUserRepository extends Repository {
     appUserFilter?: AppUserFilter
   ): Observable<AppUser[]> => {
     return this.http
-      .post<AppUser[]>(kebabCase(nameof(this.list)), appUserFilter)
+      .post<AppUser[]>(kebabCase(nameof(this.listApproval)), appUserFilter)
       .pipe(Repository.responseMapToList<AppUser>(AppUser));
   };
 

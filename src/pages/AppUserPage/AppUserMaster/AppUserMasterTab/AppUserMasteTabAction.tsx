@@ -5,25 +5,25 @@ import { useTranslation } from "react-i18next";
 import {
   Button,
   InputSearch,
-  OverflowMenu,
+  InputText,
+  // OverflowMenu,
   Tag,
 } from "react-components-design-system";
-import MasterAdvanceFilter from "./AppUserMasterAdvanceFilter";
-import { Add, Filter, Settings } from "@carbon/icons-react";
+import MasterAdvanceFilter from "./AppUserMasterTabAdvanceFilter";
 import classNames from "classnames";
+import Funnel from "../../../../assets/images/Funnel.svg";
 import { FilterActionEnum } from "core/services/service-types";
-import { importExportService } from "core/services/page-services/import-export-service";
+// import { importExportService } from "core/services/page-services/import-export-service";
 import { useDebounceFn } from "ahooks";
-import { AppUserMaster, AppUserMasterContext } from "./AppUserMasterHook";
-import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
+import { AppUserMaster, AppUserMasterContext } from "../AppUserMasterHook";
+// import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
 
-const AppUserMasterActionBar = () => {
+const AppUserMasterAction = () => {
   const appUserMaster = useContext<AppUserMaster>(AppUserMasterContext);
   const {
     modelFilter,
     countFilter,
     dispatchFilter,
-    drawerCreateRef,
     handleLoadList,
     handleResetList,
   } = appUserMaster;
@@ -31,18 +31,14 @@ const AppUserMasterActionBar = () => {
   const [translate] = useTranslation();
   const [visibleFilter, setVisibleFilter] = React.useState(false);
 
-  const { handleListExport, handleExportTemplateList } =
-    importExportService.useExport();
+  // const { handleListExport, handleExportTemplateList } =
+  //   importExportService.useExport();
 
-  const {
-    handleImportList,
-    ref: importActionRef,
-    handleClick: handleClickImport,
-  } = importExportService.useImport(handleResetList);
-
-  const handleOpenDrawer = React.useCallback(() => {
-    console.log("hihi");
-  }, [drawerCreateRef]);
+  // const {
+  //   handleImportList,
+  //   ref: importActionRef,
+  //   handleClick: handleClickImport,
+  // } = importExportService.useImport(handleResetList);
 
   const { run } = useDebounceFn(
     (search: string) => {
@@ -59,36 +55,38 @@ const AppUserMasterActionBar = () => {
     }
   );
 
-  const listActions = [
-    {
-      title: translate("general.actions.import"),
-      isShow: true,
-      action: () => {
-        importActionRef.current.click();
-      },
-    },
-    {
-      title: translate("general.actions.export"),
-      isShow: true,
-      action: handleListExport(modelFilter, appUserRepository.export),
-    },
-    {
-      title: translate("general.actions.exportTemplate"),
-      isShow: true,
-      action: handleExportTemplateList(appUserRepository.exportTemplate),
-    },
-  ];
+  // const listActions = [
+  //   {
+  //     title: translate("general.actions.import"),
+  //     isShow: true,
+  //     action: () => {
+  //       importActionRef.current.click();
+  //     },
+  //   },
+  //   {
+  //     title: translate("general.actions.export"),
+  //     isShow: true,
+  //     action: handleListExport(modelFilter, appUserRepository.export),
+  //   },
+  //   {
+  //     title: translate("general.actions.exportTemplate"),
+  //     isShow: true,
+  //     action: handleExportTemplateList(appUserRepository.exportTemplate),
+  //   },
+  // ];
 
   return (
     <>
       <div className="page-master__filter-action-search d-flex align-items-center">
-        <InputSearch
-          value={modelFilter.search}
-          classFilter={AppUserFilter}
-          placeHolder={translate("general.placeholder.search")}
-          onChange={run}
-          position="right"
-        />
+        <div className="w-300px">
+          <InputText
+            value={modelFilter.search}
+            placeHolder={translate("general.placeholder.search")}
+            onChange={run}
+            type={1}
+            isSmall
+          />
+        </div>
       </div>
       <div className="page-master__actions d-flex align-items-center">
         {countFilter > 0 && (
@@ -114,21 +112,20 @@ const AppUserMasterActionBar = () => {
             )}
             onClick={() => setVisibleFilter(true)}
           >
-            <Filter size={16} />
+            <Button
+              type="tertiary"
+              size="lg"
+              icon={<img src={Funnel} alt="funnel" />}
+              iconPlace="left"
+            >
+              {" "}
+              Bộ lọc{" "}
+            </Button>
           </button>
         </Dropdown>
-        <Button type="icon-ghost" icon={<Settings size={16} />} size="lg" />
-        <OverflowMenu size="xl" list={listActions}></OverflowMenu>
-        <Button
-          type="primary"
-          className="btn--lg"
-          icon={<Add size={16} />}
-          onClick={handleOpenDrawer}
-        >
-          {translate("general.actions.create")}
-        </Button>
+        {/* <OverflowMenu size="xl" list={listActions}></OverflowMenu> */}
       </div>
-      <input
+      {/* <input
         ref={importActionRef}
         type="file"
         style={{ display: "none" }}
@@ -136,9 +133,9 @@ const AppUserMasterActionBar = () => {
         onClick={handleClickImport}
         onChange={handleImportList(appUserRepository.import)}
         accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-      />
+      /> */}
     </>
   );
 };
 
-export default AppUserMasterActionBar;
+export default AppUserMasterAction;

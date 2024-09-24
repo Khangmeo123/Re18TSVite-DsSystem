@@ -402,6 +402,10 @@ tr
   z-index: 100;
   position: fixed;
   .tabs__container .ant-tabs {
+    width: calc(100% - 16px);
+    .ant-tabs-nav {
+      margin-left: 20px;
+    }
     .ant-tabs-tab {
       box-shadow: unset !important;
       height: 44px !important;

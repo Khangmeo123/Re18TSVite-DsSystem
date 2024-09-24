@@ -6,7 +6,7 @@ import LayoutMasterTitle from "./LayoutMasterTitle";
 const LayoutMaster = (props: PropsWithChildren<unknown>) => {
   const { children } = props;
 
-  return <div className="page page-master m-l--sm m-r--2xl">{children}</div>;
+  return <div className="page page-master">{children}</div>;
 };
 LayoutMaster.Title = LayoutMasterTitle;
 LayoutMaster.Actions = LayoutMasterActions;

@@ -12,7 +12,7 @@ import {
 } from "react-components-design-system";
 import { Search } from "@carbon/icons-react";
 import { appUserRepository } from "pages/AppUserPage/AppUserRepository";
-import { AppUserMaster, AppUserMasterContext } from "./AppUserMasterHook";
+import { AppUserMaster, AppUserMasterContext } from "../AppUserMasterHook";
 import { FilterActionEnum } from "core/services/service-types";
 
 interface AppUserMasterAdvanceFilterProps {
